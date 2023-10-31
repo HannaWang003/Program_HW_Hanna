@@ -38,7 +38,7 @@ session_start();
 
         <!-- 上個月日期結束 -->
 
-        <!-- thisMonth -->
+        <!-- thisMonth_START -->
         <div class="containerBox">
             <h2>西元<?=$year?>年<?=$month?>月</h2>
             <div class="containerBoxS">
@@ -91,6 +91,7 @@ else{
 ?>
             </div>
         </div>
+        <!-- thisMonth-END -->
         <!-- nextMonth_start-->
         <!-- nextMonth_end -->
         <!-- 整個版面結尾 -->
