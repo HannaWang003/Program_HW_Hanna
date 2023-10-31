@@ -11,83 +11,33 @@
         margin: 0;
     }
 
-    h1 {
-        text-align: center;
-    }
-
-    h2 {
-        text-align: center;
-    }
-
-    table,
-    tr,
-    th,
-    td {
-        border: 2px solid black;
-        border-collapse: separate;
-    }
-
-    table {
-        width: 30vw;
-    }
-
-    td {
-        text-align: center;
-    }
-
     .containerBox {
-        background-color: aquamarine;
         margin: auto;
         width: 80vw;
-        height: 100vh;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
+        background-color: azure;
+        border: 1px solid gray;
     }
 
-    .conatiner {
+    .containerBoxS {
         margin: auto;
+        width: 50vw;
+        background-color: beige;
     }
 
-    .bg-c1 {
-        background-color: rgb(156, 131, 158);
+    .every span {
+        margin: 5px;
+        display: inline-block;
+        width: 5vw;
+        height: 5vw;
+        border: 1px solid black;
     }
 
     .today-c1 {
-        background-color: white;
-        filter: drop-shadow(10px 10px black);
+        background-color: antiquewhite;
     }
 
-    /* .PreNext{ */
-    /* margin:auto; */
-    /* width:50vw; */
-    /* background-color:lightgreen; */
-    /* display:flex; */
-    /* justify-content: space-evenly; */
-    /* } */
-    .preMonth h3 {
-        text-align: left;
-    }
-
-    .thisMonth {
-        position: fixed;
-    }
-
-    .thisMonth>table {
-        width: 50vw;
-        height: 90vh;
-        background-color: rgb(90, 76, 96);
-        box-shadow: 10px 10px 5px black;
-        height: 50vh;
-    }
-
-    .thisMonth>table td {
-        height: 10vh;
-        width: 5vw;
-    }
-
-    .nextMonth h3 {
-        text-align: right;
+    .bg-c1 {
+        background-color: aquamarine;
     }
     </style>
 </head>
@@ -111,73 +61,29 @@
     $year1=$_GET['year1'];
     $year2=$_GET['year2'];
     ?>
-    <!-- 上個月 -->
-    <div class="containerBox">
-        <div class="container preMonth">
-            <h2>西元<?=$year1?>年<?=$month1?>月</h2>
-            <a href="index.php?pre=<?=$month?>&year=<?=$year?>">
-                <h3>
-                    <<&nbsp;Previous< /h3>
-                        <div class="monthDiv">
+    <div class="container">
+        <!-- 整個版面開始 -->
+        <!-- 上個月 -->
+        <!-- 上個月日期開始 -->
 
-                        </div>
-                        <table>
-                            <tr>
-                                <th class="bg-c1">SUN</th>
-                                <th>MON</th>
-                                <th>TUS</th>
-                                <th>WED</th>
-                                <th>THR</th>
-                                <th>FRI</th>
-                                <th class="bg-c1">.SAT</th>
-                            </tr>
-                            <?php
-for($j=0;$j < $row1; $j++){
-    echo "<tr>";
-    for($i=0;$i<7;$i++){
-        $tmp=(7*$j)+$i;
-        $everydayTime=strtotime("$tmp days",$FC1);
-        $everydayM=date("m",$everydayTime);
-        if($i==0 || $i==6){
-            echo "<td class='bg-c1'>";
-        }
-        else{
-                echo "<td>";
-        }
-if($everydayM==$month1){
-    echo $everyday=date("j",$everydayTime);
-    echo "</td>";
-}
-else{
-    echo "</td>";
-}
-    }
-}
+        <!-- 上個月日期結束 -->
 
-?>
-                        </table>
-            </a>
-        </div>
         <!-- thisMonth -->
-        <div class="container thisMonth">
+        <div class="containerBox">
             <h2>西元<?=$year?>年<?=$month?>月</h2>
-            <!-- <div class="PreNext"> -->
-            <!-- <a href="index.php?pre=<?=$month?>&year=<?=$year?>">上個月</a> -->
-            <!-- <a href="index.php?next=<?=$month?>&year=<?=$year?>">下個月</a> -->
-            <!-- </div> -->
-            <table>
-                <tr>
-                    <th class="bg-c1">SUN</th>
-                    <th>MON</th>
-                    <th>TUS</th>
-                    <th>WED</th>
-                    <th>THR</th>
-                    <th>FRI</th>
-                    <th class="bg-c1">.SAT</th>
-                </tr>
+            <div class="containerBoxS every">
+                <span class="bg-c1">SUN</span>
+                <span>MON</span>
+                <span>TUS</span>
+                <span>WED</span>
+                <span>THR</span>
+                <span>FRI</span>
+                <span class="bg-c1">SAT</span>
+                <!-- <br> -->
+            </div>
+            <div class="containerBoxS every">
                 <?php
 for($j=0;$j < $row; $j++){
-    echo "<tr>";
     for($i=0;$i<7;$i++){
         $tmp=(7*$j)+$i;
         $everydayTime=strtotime("$tmp days",$FC);
@@ -185,74 +91,36 @@ for($j=0;$j < $row; $j++){
         $everyday=date("j",$everydayTime);
         $every=date("Y-m-d",$everydayTime);
         if($every==date("Y-m-d") && $everydayM==$month){
-             echo "<td class='today-c1'>";  
+             echo "<span class='today-c1'>";  
             
         }
         elseif($i==0 || $i==6){
-            echo "<td class='bg-c1'>";
+            echo "<span class='bg-c1'>";
         }
 
         else{
-                echo "<td>";
+                echo "<span>";
         }
 if($everydayM==$month){
     echo $everyday;
-    echo "</td>";
+    echo "</span>";
 }
 else{
-    echo "</td>";
+    echo "&nbsp;</span>";
 }
 
     }
+    echo "<br>";
 }
 
 ?>
-            </table>
+            </div>
         </div>
-        <!-- nextMonth -->
-        <div class="container nextMonth">
-            <h2>西元<?=$year2?>年<?=$month2?>月</h2>
-            <a href="index.php?next=<?=$month?>&year=<?=$year?>">
-                <h3>NEXT&nbsp;>></h3>
-                <table>
-                    <tr>
-                        <th class="bg-c1">SUN</th>
-                        <th>MON</th>
-                        <th>TUS</th>
-                        <th>WED</th>
-                        <th>THR</th>
-                        <th>FRI</th>
-                        <th class="bg-c1">.SAT</th>
-                    </tr>
-                    <?php
-for($j=0;$j < $row2; $j++){
-    echo "<tr>";
-    for($i=0;$i<7;$i++){
-        $tmp=(7*$j)+$i;
-        $everydayTime=strtotime("$tmp days",$FC2);
-        $everydayM=date("m",$everydayTime);
-        if($i==0 || $i==6){
-            echo "<td class='bg-c1'>";
-        }
-        else{
-                echo "<td>";
-        }
-if($everydayM==$month2){
-    echo $everyday=date("j",$everydayTime);
-    echo "</td>";
-}
-else{
-    echo "</td>";
-}
-
-    }
-}
-
-?>
-                </table>
-            </a>
-        </div>
+        <!-- nextMonth_start-->
+        <!-- nextMonth_end -->
+        <!-- 整個版面結尾 -->
     </div>
+
 </body>
 
 </html>
