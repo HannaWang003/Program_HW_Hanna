@@ -1,5 +1,5 @@
 <?php
-include('program.php');
+include('./files/program.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +8,7 @@ include('program.php');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>萬年曆</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./files/style.css">
 </head>
 
 <body>

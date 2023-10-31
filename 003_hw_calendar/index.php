@@ -1,5 +1,5 @@
 <?php
-include('program.php');
+include('./files/program.php');
 $_SESSION['week']=["日","一","二","三","四","五","六"];
 $_SESSION['month']=[];
 $_SESSION['year']=[];
