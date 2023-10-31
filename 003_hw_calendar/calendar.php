@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,41 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>萬年曆</title>
-    <style>
-    * {
-        box-sizing: border-box;
-        margin: 0;
-    }
-
-    .containerBox {
-        margin: auto;
-        width: 80vw;
-        background-color: azure;
-        border: 1px solid gray;
-    }
-
-    .containerBoxS {
-        margin: auto;
-        width: 50vw;
-        background-color: beige;
-    }
-
-    .every span {
-        margin: 5px;
-        display: inline-block;
-        width: 5vw;
-        height: 5vw;
-        border: 1px solid black;
-    }
-
-    .today-c1 {
-        background-color: antiquewhite;
-    }
-
-    .bg-c1 {
-        background-color: aquamarine;
-    }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -61,6 +30,7 @@
     $year1=$_GET['year1'];
     $year2=$_GET['year2'];
     ?>
+    
     <div class="container">
         <!-- 整個版面開始 -->
         <!-- 上個月 -->
@@ -71,24 +41,29 @@
         <!-- thisMonth -->
         <div class="containerBox">
             <h2>西元<?=$year?>年<?=$month?>月</h2>
-            <div class="containerBoxS every">
-                <span class="bg-c1">SUN</span>
-                <span>MON</span>
-                <span>TUS</span>
-                <span>WED</span>
-                <span>THR</span>
-                <span>FRI</span>
-                <span class="bg-c1">SAT</span>
-                <!-- <br> -->
+            <div class="containerBoxS">
+                <div class="every">
+            <?php   
+foreach($_SESSION['week'] as $key => $w){
+    if($key==0 || $key==6){
+        echo "<span class='bg-c1'>".$w."</span>";
+    }
+    else{
+        echo "<span>".$w."</span>";
+    }
+}
+?>
+</div>
             </div>
-            <div class="containerBoxS every">
+            <div class="containerBoxS">
                 <?php
 for($j=0;$j < $row; $j++){
+    echo "<div class='every'>";
     for($i=0;$i<7;$i++){
         $tmp=(7*$j)+$i;
         $everydayTime=strtotime("$tmp days",$FC);
         $everydayM=date("m",$everydayTime);
-        $everyday=date("j",$everydayTime);
+        $everyday=date("d",$everydayTime);
         $every=date("Y-m-d",$everydayTime);
         if($every==date("Y-m-d") && $everydayM==$month){
              echo "<span class='today-c1'>";  
@@ -106,11 +81,11 @@ if($everydayM==$month){
     echo "</span>";
 }
 else{
-    echo "&nbsp;</span>";
+    echo "&nbsp&nbsp;&nbsp&nbsp;</span>";
 }
 
     }
-    echo "<br>";
+    echo "</div>";
 }
 
 ?>

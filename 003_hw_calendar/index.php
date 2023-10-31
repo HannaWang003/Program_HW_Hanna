@@ -1,5 +1,7 @@
 <?php
 date_default_timezone_set('Asia/Taipei');
+session_start();
+$_SESSION['week']=["日","一","二","三","四","五","六"];
 if(isset($_GET['month']) && isset($_GET['year'])){
     $month=$_GET['month'];
     $year=$_GET['year'];

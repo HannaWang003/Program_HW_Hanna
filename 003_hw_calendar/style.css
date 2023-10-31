@@ -1,0 +1,41 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.containerBox {
+    margin: auto;
+    width: 80vw;
+    background-color: azure;
+    border: 1px solid gray;
+}
+
+.containerBoxS {
+    margin: auto;
+    width: 50vw;
+    background-color: beige;
+}
+.every{
+    display:flex;
+    flex-wrap:nowrap;
+    justify-content:space-evenly;
+}
+
+.every span {
+    margin: 5px;
+    display: inline-block;
+    width: 20%;
+    height: 5vw;
+    text-align:center;
+    line-height:5vw;
+    border: 1px solid black;
+    font-size:50%;
+}
+
+.today-c1 {
+    background-color: rgb(255, 255, 255);
+}
+
+.bg-c1 {
+    background-color: aquamarine;
+}
