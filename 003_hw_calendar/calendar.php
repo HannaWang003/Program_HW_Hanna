@@ -1,5 +1,5 @@
 <?php
-session_start();
+include('program.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,6 +13,9 @@ session_start();
 
 <body>
     <?php
+    // echo "<pre>";
+    print_r($_SESSION);
+    // echo "</pre>";
     // 變數
         $row=$_GET['r'];
         $row1=$_GET['r1'];
@@ -22,13 +25,13 @@ session_start();
         $FC1=$_GET['FC1'];
         $FC2=$_GET['FC2'];
 
-    $month=$_GET['month'];
-    $month1=$_GET['month1'];
-    $month2=$_GET['month2'];
+    $month=$_SESSION['month'][0];
+    $month1=$_SESSION['month'][1];
+    $month2=$_SESSION['month'][2];
 
-    $year=$_GET['year'];
-    $year1=$_GET['year1'];
-    $year2=$_GET['year2'];
+    $year=$_SESSION['year'][0];
+    $year1=$_SESSION['year'][1];
+    $year2=$_SESSION['year'][2];
     ?>
     
     <div class="container">
