@@ -28,23 +28,38 @@ include('./files/program.php');
     $month=$_SESSION['month'][0];
     $month1=$_SESSION['month'][1];
     $month2=$_SESSION['month'][2];
+    $month=$_SESSION['month'];
 
     $year=$_SESSION['year'][0];
     $year1=$_SESSION['year'][1];
     $year2=$_SESSION['year'][2];
+    $year=$_SESSION['year'];
+    echo "<pre>";
+    print_r($year);
+    echo "</pre>";
     ?>
 
     <div class="container">
         <!-- 整個版面開始 -->
 
         <!-- 上個月月曆_start -->
+        <?php
+// for($n=0;$n<3;$n++){
+
+    
+    
+    
+//     echo  "</div>";
+
+// }
+        ?>
         <div class="containerBox">
         </div>
         <!-- 上個月月曆_end -->
 
         <!-- thisMonth_START -->
         <div class="containerBox">
-            <h2>西元<?=$year?>年<?=$month?>月</h2>
+            <h2>西元<?=$year[0]?>年<?=$month[0]?>月</h2>
             <div class="containerBoxS">
                 <div class="every">
                     <?php   
@@ -69,7 +84,7 @@ for($j=0;$j < $row; $j++){
         $everydayM=date("m",$everydayTime);
         $everyday=date("d",$everydayTime);
         $every=date("Y-m-d",$everydayTime);
-        if($every==date("Y-m-d") && $everydayM==$month){
+        if($every==date("Y-m-d") && $everydayM==$month[0]){
              echo "<span class='today-c1'>";  
             
         }
@@ -80,7 +95,7 @@ for($j=0;$j < $row; $j++){
         else{
                 echo "<span>";
         }
-if($everydayM==$month){
+if($everydayM==$month[0]){
     echo $everyday;
     echo "</span>";
 }
