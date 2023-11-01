@@ -61,7 +61,7 @@ include('./files/program.php');
         <div class="containerBox">
             <h2>西元<?=$year[0]?>年<?=$month[0]?>月</h2>
             <div class="containerBoxS">
-                <div class="every">
+                <div class="every everyW">
                     <?php   
 foreach($_SESSION['week'] as $key => $w){
     if($key==0 || $key==6){
@@ -77,7 +77,7 @@ foreach($_SESSION['week'] as $key => $w){
             <div class="containerBoxS">
                 <?php
 for($j=0;$j < $row; $j++){
-    echo "<div class='every'>";
+    echo "<div class='every everyD'>";
     for($i=0;$i<7;$i++){
         $tmp=(7*$j)+$i;
         $everydayTime=strtotime("$tmp days",$FC);

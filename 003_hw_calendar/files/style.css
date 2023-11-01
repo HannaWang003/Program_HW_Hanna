@@ -2,54 +2,80 @@
   box-sizing: border-box;
   margin: 0;
 }
+h2{
+  text-align:center;
+  background-color:lightseagreen;
+}
 .container {
+  margin:auto;
   display: flex;
+  width:80vw;
+  height:80vh;
+  position:relative;
 }
 
 .containerBox {
   margin: auto;
-  width: 80vw;
-  height: 80vh;
-  background-color: lightgray;
-  border: 1px solid gray;
+  padding:1vh;
+  /* height: 50vh; */
 }
 .containerBox:nth-child(1) {
-  background-color: red;
+  border:1px solid rgb(0, 140, 255);
   height: 20vh;
   width: 20vw;
 }
+.containerBox:nth-child(2) {
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* 添加阴影效果 */
+  color: #787878; /* 文本颜色为白色，以突出显示 */
+position:absolute;
+width:50vw;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+}
 .containerBox:nth-child(3) {
-  background-color: rgb(141, 104, 104);
+  border:1px solid rgb(112, 119, 108);
   height: 20vh;
   width: 20vw;
 }
 
 .containerBoxS {
-  margin: auto;
-  width: 80%;
-  background-color: beige;
+  width: 100%;
+  /* background-color: beige; */
 }
 .every {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-evenly;
 }
-
-.every span {
-  margin: 5px;
-  display: inline-block;
+.every span{
+  display:inline-block;
+  margin: 1vh;
+  padding:1vh;
   width: 20%;
-  height: 5vw;
-  text-align: center;
-  line-height: 5vw;
-  border: 1px solid black;
-  font-size: 50%;
+  border-right: 2px solid rgb(238, 238, 238);
+  border-bottom: 1px solid lightgray;
 }
+.everyW {
+  /* background-color:lightgreen; */
+  }
+.everyW span{
+  height:5vh;
+  line-height: 3vh;
+  text-align:center;
+  font-size:50%;
+}
+.everyD span {
+  height: 8vh;
+  font-size: 50%;
 
+}
 .today-c1 {
-  background-color: rgb(255, 255, 255);
+  box-shadow:5px 5px 5px rgba(0, 0, 0, 0.3);
+  border-left:0.2vh solid rgb(219, 219, 219);
+  border-top:0.2vh solid rgb(219, 219, 219);
 }
 
 .bg-c1 {
-  background-color: aquamarine;
+  background-color: rgb(174, 208, 197,0.5);
 }
