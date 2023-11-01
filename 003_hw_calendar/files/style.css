@@ -12,6 +12,16 @@
   background-color: azure;
   border: 1px solid gray;
 }
+.containerBox:nth-child(1) {
+  background-color: red;
+  height: 20vh;
+  width: 20vw;
+}
+.containerBox:nth-child(3) {
+  background-color: rgb(141, 104, 104);
+  height: 20vh;
+  width: 20vw;
+}
 
 .containerBoxS {
   margin: auto;
