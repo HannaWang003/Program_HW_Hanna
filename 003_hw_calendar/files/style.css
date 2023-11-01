@@ -5,19 +5,3 @@
 .container{
   display:flex;
 }
-.containerBox{
-  width:30vw;
-}
-div{
-  border:1px solid black;
-}
-
-.today-c1 {
-  box-shadow:5px 5px 5px rgba(0, 0, 0, 0.3);
-  border-left:0.2vh solid rgb(219, 219, 219);
-  border-top:0.2vh solid rgb(219, 219, 219);
-}
-
-.bg-c1 {
-  background-color: rgb(174, 208, 197,0.5);
-}
