@@ -36,9 +36,8 @@ include('./files/program.php');
 
     <div class="container">
         <!-- 整個版面開始 -->
-        <!-- 上個月 -->
-        <!-- 上個月日期開始 -->
 
+        <!-- 上個月日期開始 -->
         <!-- 上個月日期結束 -->
 
         <!-- thisMonth_START -->
