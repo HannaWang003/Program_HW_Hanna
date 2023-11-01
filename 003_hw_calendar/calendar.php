@@ -21,9 +21,9 @@ include('./files/program.php');
         $row1=$_SESSION['row'][1];
         $row2=$_SESSION['row'][2];
 
-        $FC=$_GET['FC'];
-        $FC1=$_GET['FC1'];
-        $FC2=$_GET['FC2'];
+        $FC=$_SESSION['PreMDt'][0];
+        $FC1=$_SESSION['PreMDt'][1];
+        $FC2=$_SESSION['PreMDt'][2];
 
     $month=$_SESSION['month'][0];
     $month1=$_SESSION['month'][1];

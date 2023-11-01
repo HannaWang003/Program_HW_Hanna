@@ -3,6 +3,7 @@ include('./files/program.php');
 $_SESSION['week']=["日","一","二","三","四","五","六"];
 $_SESSION['month']=[];
 $_SESSION['year']=[];
+$_SESSION['PreMDt']=[];
 // if(isset($_GET['month']) && isset($_GET['year'])){
 //     $month=$_GET['month'];
 //     $year=$_GET['year'];
@@ -122,13 +123,13 @@ $month=$_SESSION['month'][$i];
 $monthD1=date("Y-{$month}-1");
 $monthD1time=strtotime($monthD1);
 $monthD1w=date('w',$monthD1time);
-$preMonthDt[]=strtotime("-$monthD1w days",$monthD1time);
-$preMonthD=date("Y-m-d",$preMonthDt[$i]);
+$_SESSION['PreMDt'][$i]=strtotime("-$monthD1w days",$monthD1time);
+$preMonthD=date("Y-m-d",$_SESSION[$i]);
 $monthDend=date("t");
 $monthDendtime=strtotime("Y-{$_SESSION['month'][0]}-$monthDend");
 $_SESSION['row'][$i]=ceil(($monthD1w+$monthDend)/7);
 }
 echo "<pre>";
 echo "</pre>";
-header("location:calendar.php?FC=$preMonthDt[0]&FC1=$preMonthDt[1]&FC2=$preMonthDt[2]")
+header("location:calendar.php")
 ?>
