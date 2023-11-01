@@ -17,9 +17,9 @@ include('./files/program.php');
     print_r($_SESSION);
     // echo "</pre>";
     // 變數
-        $row=$_GET['r'];
-        $row1=$_GET['r1'];
-        $row2=$_GET['r2'];
+        $row=$_SESSION['row'][0];
+        $row1=$_SESSION['row'][1];
+        $row2=$_SESSION['row'][2];
 
         $FC=$_GET['FC'];
         $FC1=$_GET['FC1'];
@@ -33,7 +33,7 @@ include('./files/program.php');
     $year1=$_SESSION['year'][1];
     $year2=$_SESSION['year'][2];
     ?>
-    
+
     <div class="container">
         <!-- 整個版面開始 -->
         <!-- 上個月 -->
@@ -46,7 +46,7 @@ include('./files/program.php');
             <h2>西元<?=$year?>年<?=$month?>月</h2>
             <div class="containerBoxS">
                 <div class="every">
-            <?php   
+                    <?php   
 foreach($_SESSION['week'] as $key => $w){
     if($key==0 || $key==6){
         echo "<span class='bg-c1'>".$w."</span>";
@@ -56,7 +56,7 @@ foreach($_SESSION['week'] as $key => $w){
     }
 }
 ?>
-</div>
+                </div>
             </div>
             <div class="containerBoxS">
                 <?php

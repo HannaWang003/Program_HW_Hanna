@@ -117,26 +117,18 @@ else{
   $_SESSION['year'][2]=$_SESSION['year'][0];
 }    
 }
-// for($i=0;$i<3;$i++){
-//   if($i==0){
-//     $_SESSION['month'][0]=$month;
-//   }
-//   elseif($i==1){
-//     $_SESSION['month'][1]=$premonth;
-//   }
-//   else{
-//     $_SESSION['month'][2]=$nextmonth;
-//   }
-$monthD1=date("Y-{$_SESSION['month'][0]}-1");
+for($i=0;$i<3;$i++){
+$month=$_SESSION['month'][$i];
+$monthD1=date("Y-{$month}-1");
 $monthD1time=strtotime($monthD1);
 $monthD1w=date('w',$monthD1time);
 $preMonthDt[]=strtotime("-$monthD1w days",$monthD1time);
 $preMonthD=date("Y-m-d",$preMonthDt[$i]);
 $monthDend=date("t");
 $monthDendtime=strtotime("Y-{$_SESSION['month'][0]}-$monthDend");
-$row[]=ceil(($monthD1w+$monthDend)/7);
-
+$_SESSION['row'][$i]=ceil(($monthD1w+$monthDend)/7);
+}
 echo "<pre>";
 echo "</pre>";
-header("location:calendar.php?r=$row[0]&r1=$row[1]&r2=$row[2]&FC=$preMonthDt[0]&FC1=$preMonthDt[1]&FC2=$preMonthDt[2]")
+header("location:calendar.php?FC=$preMonthDt[0]&FC1=$preMonthDt[1]&FC2=$preMonthDt[2]")
 ?>
