@@ -18,13 +18,15 @@ include('./files/program.php');
     $row=$_SESSION['row'];
     $FC=$_SESSION['PreMDt'];
     $month=$_SESSION['month'];
+    $Emonth=$_SESSION['Emonth'];
     $year=$_SESSION['year'];
     ?>
 
     <div class="container">
         <!-- 整個版面開始 -->
-        <?php          
-echo "<h2>西元".$year."年".$month."月</h2>";
+<div class="containerBox">
+        <?php      
+echo "<h2>".$Emonth."&nbsp;&nbsp;".$year."</h2>";
 echo "<div class='containerBoxS'>";
 echo "<div class='every everyW'>";
     foreach($_SESSION['week'] as $key => $w){
@@ -71,6 +73,7 @@ echo "<div class='every everyW'>";
         echo "</div>";
     }
     ?>
+    </div>
     </div>
     <!-- 整個版面結尾 -->
     </div>

@@ -1,6 +1,6 @@
 <?php
 include('./files/program.php');
-$_SESSION['week']=["日","一","二","三","四","五","六"];
+$_SESSION['week']=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
 
   if(isset($_GET['prev'])){
     if($_GET['prev']==1){
@@ -36,5 +36,6 @@ $preMonthD=date("Y-m-d",$_SESSION['PreMDt']);
 $monthDend=date("t",strtotime($monthD1));
 $monthDendtime=strtotime("Y-{$month}-$monthDend");
 $_SESSION['row']=ceil(($monthD1w+$monthDend)/7);
+$_SESSION['Emonth']=date("F",$monthD1time);
 header("location:calendar.php")
 ?>
