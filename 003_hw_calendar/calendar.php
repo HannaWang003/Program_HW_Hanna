@@ -30,8 +30,11 @@ include('./files/program.php');
     <div class="container">
         <!-- 整個版面開始 -->
         <?php
-        for($n=0;$n<3;$n++){
+for($n=0;$n<3;$n++){
+echo "<div class='containerBox'>";            
 echo "<h2>西元$year[$n]年$month[$n]月</h2>";
+echo "<div class='containerBoxS'>";
+echo "<div class='every everyW'>";
     foreach($_SESSION['week'] as $key => $w){
         if($key==0 || $key==6){
             echo "<span class='bg-c1'>".$w."</span>";
@@ -41,10 +44,10 @@ echo "<h2>西元$year[$n]年$month[$n]月</h2>";
         }
     }
     ?>
-                    </div>
-                </div>
-                <div class="containerBoxS">
-                    <?php
+    </div>
+    </div>
+    <div class="containerBoxS">
+        <?php
     for($j=0;$j < $row[$n]; $j++){
         echo "<div class='every everyD'>";
         for($i=0;$i<7;$i++){
@@ -75,11 +78,13 @@ echo "<h2>西元$year[$n]年$month[$n]月</h2>";
         }
         echo "</div>";
     }
+    ?>
+    </div>
+    </div>
+    <?php
 }
- 
-
         ?>
-        <!-- 整個版面結尾 -->
+    <!-- 整個版面結尾 -->
     </div>
 
 </body>
