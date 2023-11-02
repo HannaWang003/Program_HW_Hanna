@@ -4,6 +4,7 @@ $_SESSION['week']=["日","一","二","三","四","五","六"];
 $_SESSION['month']=[];
 $_SESSION['year']=[];
 $_SESSION['PreMDt']=[];
+$_SESSION['row']=[];
 // if(isset($_GET['month']) && isset($_GET['year'])){
 //     $month=$_GET['month'];
 //     $year=$_GET['year'];
@@ -124,10 +125,12 @@ $monthD1=date("Y-{$month}-1");
 $monthD1time=strtotime($monthD1);
 $monthD1w=date('w',$monthD1time);
 $_SESSION['PreMDt'][$i]=strtotime("-$monthD1w days",$monthD1time);
-$preMonthD=date("Y-m-d",$_SESSION[$i]);
-$monthDend=date("t");
-$monthDendtime=strtotime("Y-{$_SESSION['month'][0]}-$monthDend");
+$preMonthD=date("Y-m-d",$_SESSION['PreMDt'][$i]);
+$monthDend=date("t",strtotime($monthD1));
+$monthDendtime=strtotime("Y-{$month}-$monthDend");
 $_SESSION['row'][$i]=ceil(($monthD1w+$monthDend)/7);
+// echo $_SESSION['PreMDt'][$i]."<br>";
+// echo $_SESSION['row'][$i]."<br>";
 }
 echo "<pre>";
 echo "</pre>";
