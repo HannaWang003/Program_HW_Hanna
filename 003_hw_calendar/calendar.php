@@ -8,31 +8,23 @@ include('./files/program.php');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>萬年曆</title>
-    <link rel="stylesheet" href="./files/style.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
     <?php
-    // echo "<pre>";
-    // print_r($_SESSION);
-    // echo "</pre>";
+
     // 變數
-        $row=$_SESSION['row'];
-        $FC=$_SESSION['PreMDt'];
+    $row=$_SESSION['row'];
+    $FC=$_SESSION['PreMDt'];
     $month=$_SESSION['month'];
     $year=$_SESSION['year'];
-    echo "<pre>";
-    print_r($row);
-    echo "</pre>";    
-    $n=1;
     ?>
 
     <div class="container">
         <!-- 整個版面開始 -->
-        <?php
-for($n=0;$n<3;$n++){
-echo "<div class='containerBox'>";            
-echo "<h2>西元$year[$n]年$month[$n]月</h2>";
+        <?php          
+echo "<h2>西元".$year."年".$month."月</h2>";
 echo "<div class='containerBoxS'>";
 echo "<div class='every everyW'>";
     foreach($_SESSION['week'] as $key => $w){
@@ -48,15 +40,15 @@ echo "<div class='every everyW'>";
     </div>
     <div class="containerBoxS">
         <?php
-    for($j=0;$j < $row[$n]; $j++){
+    for($j=0;$j < $row; $j++){
         echo "<div class='every everyD'>";
         for($i=0;$i<7;$i++){
             $tmp=(7*$j)+$i;
-            $everydayTime=strtotime("$tmp days",$FC[$n]);
+            $everydayTime=strtotime("$tmp days",$FC);
             $everydayM=date("m",$everydayTime);
             $everyday=date("d",$everydayTime);
             $every=date("Y-m-d",$everydayTime);
-            if($every==date("Y-m-d") && $everydayM==$month[$n]){
+            if($every==date("Y-m-d") && $everydayM==$month){
                  echo "<span class='today-c1'>";  
                 
             }
@@ -67,7 +59,7 @@ echo "<div class='every everyW'>";
             else{
                     echo "<span>";
             }
-    if($everydayM==$month[$n]){
+    if($everydayM==$month){
         echo $everyday;
         echo "</span>";
     }
@@ -80,10 +72,6 @@ echo "<div class='every everyW'>";
     }
     ?>
     </div>
-    </div>
-    <?php
-}
-        ?>
     <!-- 整個版面結尾 -->
     </div>
 
