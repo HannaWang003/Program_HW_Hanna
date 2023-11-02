@@ -5,100 +5,44 @@ $_SESSION['month']=[];
 $_SESSION['year']=[];
 $_SESSION['PreMDt']=[];
 $_SESSION['row']=[];
-// if(isset($_GET['month']) && isset($_GET['year'])){
-//     $month=$_GET['month'];
-//     $year=$_GET['year'];
-// }
-// 執行pre開始
-// elseif(isset($_GET['pre'])){
-  if(isset($_GET['pre'])){
-    if($_GET['pre']-1<1){
-      $month=12;
-      $year=$_GET['year']-1; 
-      if($month-1<1){
-        $premonth=12;
-        $preyear=$year-1;  
-      }
-      else{
-      $premonth=$month-1;
-      $preyear=$year;
-  }   
-  if($month+1>12){
-    $nextmonth=1;
-    $nextyear=$year+1;  
-  }
-  else{
-  $nextmonth=$month+1;
-  $nextyear=$year;
-  }     
-    }
-    else{
-    $month=$_GET['pre']-1;
-    $year=$_GET['year'];
-    if($month-1<1){
-      $premonth=12;
-      $preyear=$year-1;  
-    }
-    else{
-    $premonth=$month-1;
-    $preyear=$year;
-}   
-if($month+1>12){
-  $nextmonth=1;
-  $nextyear=$year+1;  
-}
-else{
-$nextmonth=$month+1;
-$nextyear=$year;
-}    
-}
-}
-// 執行pre結束
 
-// 執行next開始
-elseif(isset($_GET['next'])){
-    if($_GET['next']+1>12){
-      $month=1;
-      $year=$_GET['year']+1;
-      if($month-1<1){
-        $premonth=12;
-        $preyear=$year-1;  
-      }
-      else{
-      $premonth=$month-1;
-      $preyear=$year;
-  }   
-  if($month+1>12){
-    $nextmonth=1;
-    $nextyear=$year+1;  
+  if(isset($_GET['pre'])){
+    if($_GET['pre']==1){
+      $_SESSION['month'][0]=12;
+      $_SESSION['year'][0]=$_GET['year']-1;
+      $_SESSION['month'][1]=$_SESSION['month'][0]-1;
+      $_SESSION['year'][1]=$_SESSION['year'][0];
+      $_SESSION['month'][2]=1;
+      $_SESSION['year'][2]=$_GET['year'];
+    }
+    else{
+      $_SESSION['month'][2]=$_GET['pre'];
+      $_SESSION['year'][2]=$_GET['year'];
+      $_SESSION['month'][0]=$_SESSION['month'][2]-1;
+      $_SESSION['year'][0]=$_GET['year'];
+      $_SESSION['month'][1]=$_SESSION['month'][0]-1;
+      $_SESSION['year'][1]=$_GET['year'];
+    }
   }
-  else{
-  $nextmonth=$month+1;
-  $nextyear=$year;
-  }      
+  elseif(isset($_GET['next'])){
+    if($_GET['next']==12){
+      $_SESSION['month'][0]=1;
+      $_SESSION['year'][0]=$_GET['year']+1;
+      $_SESSION['month'][1]=12;
+      $_SESSION['year'][1]=$_GET['year'];
+      $_SESSION['month'][2]=$_SESSION['month'][0]+1;
+      $_SESSION['year'][2]=$_GET['year'];
     }
     else{
-    $month=$_GET['next']+1;
-    $year=$_GET['year'];
-    if($month-1<1){
-      $premonth=12;
-      $preyear=$year-1;  
+      $_SESSION['month'][1]=$_GET['next'];
+      $_SESSION['year'][1]=$_GET['year'];
+      $_SESSION['month'][0]=$_SESSION['month'][1]+1;
+      $_SESSION['year'][0]=$_GET['year'];
+      $_SESSION['month'][2]=$_SESSION['month'][0]+1;
+      $_SESSION['year'][2]=$_GET['year'];
     }
-    else{
-    $premonth=$month-1;
-    $preyear=$year;
-}   
-if($month+1>12){
-  $nextmonth=1;
-  $nextyear=$year+1;  
-}
-else{
-$nextmonth=$month+1;
-$nextyear=$year;
-}    
-}
-}
-// 執行next結束
+
+  }
 else{
     $_SESSION['month'][0]=date('m');
     $_SESSION['year'][0]=date('Y');
