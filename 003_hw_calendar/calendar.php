@@ -24,11 +24,19 @@ include('./files/program.php');
 
     <div class="container">
         <!-- 整個版面開始 -->
+        
 <div class="containerBox">
-        <?php      
-echo "<h2>".$Emonth."&nbsp;&nbsp;".$year."</h2>";
-echo "<div class='containerBoxS'>";
-echo "<div class='every everyW'>";
+<div class="BoxHeader">
+<div class=BHButton>
+<button><a href="index.php?prev=<?=$month?>&nbsp;&nbsp;&year=<?=$year?>">PREV</a></button>
+<button><a href="index.php?next=<?=$month?>&nbsp;&nbsp;&year=<?=$year?>">NEXT</a></button>
+</div>  
+<h2><?=$Emonth?><?=$year?></h2>
+<div class="time"><?=date("A h:i")?></div>
+</div>
+<div class='containerBoxS'>
+<div class='every everyW'>
+    <?php  
     foreach($_SESSION['week'] as $key => $w){
         if($key==0 || $key==6){
             echo "<span class='bg-c1'>".$w."</span>";

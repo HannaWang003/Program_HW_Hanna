@@ -1,26 +1,65 @@
 * {
   box-sizing: border-box;
   margin: 0;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-decoration: none;
 }
 .container{
   margin:auto;
   background-color:black;
   width:100vw;
   height:100vh;
-  position:absolute;
-  display:flex;
+  position:relative;
+  /* display:flex; */
 }
+
 .containerBox{
 width:50%;
+height:100%;
 background-color:rgb(32, 166, 178);
 text-align:center;
-padding-top:10vh;
-
-
+padding-top:1vh;
+/* background-image:url(https://picsum.photos/200/300); */
+/* 透明感 */
+/* background-image:radial-gradient(white,transparent); */
+/* background-image:linear-gradient(90deg, white,transparent); */
+/* 透明感end */
+/* 版面1 */
+/* z-index:100; */
+}
+.BoxHeader{
+  /* background-color:bisque; */
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+}
+.BHButton button{
+  height:2vw;
+  background-color:rgba(196, 196, 196,0.5);
+border:0;
+margin-left:1vw;
+}
+.BHButton button a{
+  font-size: 1rem;
+  color:rgb(0, 0, 0);
+  padding:1vw;
 }
 h2{
 
  text-align:right;
+}
+.time{
+/* background-color:lightgreen; */
+background-color:rgba(255, 255, 255, 0.312);
+width:100%;
+text-align:right;
+font-size:2rem;
+padding:2vh;
+  /* 透明感 */
+  -webkit-backdrop-filter: blur(80px);
+  backdrop-filter: blur(80px);
+    /* 透明感 end*/
+
 }
 .containerBoxS{
   margin-top:2vh;
@@ -30,9 +69,17 @@ h2{
 width:5vw;
 height:5vw;
   border-radius:50px;
-  border:1px solid black;
-  background-color:black;
+  /* background-color:black; */
+  background-color:rgba(215, 214, 214, 0.358);
   color:white;
   line-height:5vw;
+  /* 透明感 */
+  -webkit-backdrop-filter: blur(80px);
+backdrop-filter: blur(80px);
+text-shadow:0 0 2px rgb(0, 0, 0);
+/* 透明感end */
 
+}
+.today-c1{
+  box-shadow:inset 0 0 30px rgb(33, 33, 33);
 }
