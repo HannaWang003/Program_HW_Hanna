@@ -7,7 +7,7 @@ include('./files/program.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>萬年曆</title>
+    <title>Yearly Calendar</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
@@ -29,10 +29,11 @@ include('./files/program.php');
             <div class="BoxHeader">
                 <div class=BHButton>
                     <button><a href="index.php?prev=<?=$month?>&year=<?=$year?>">PREV</a></button>
+                    <button><a href="index.php">||</a></button>
                     <button><a href="index.php?next=<?=$month?>&year=<?=$year?>">NEXT</a></button>
                 </div>
                 <h2><?=$Emonth?><?=$year?></h2>
-                <div class="time"><?=date("A h:i")?></div>
+                <div class="time"><?=date("A h:i:s")?></div>
             </div>
             <div class='containerBoxS'>
                 <div class='every everyW'>
@@ -85,6 +86,7 @@ include('./files/program.php');
         </div>
         <!-- 整個版面結尾 -->
     </div>
+    <?php header('refresh: 1;url="calendar.php"') ?>
 </body>
 
 </html>
