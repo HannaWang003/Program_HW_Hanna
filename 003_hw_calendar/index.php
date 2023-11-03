@@ -6,6 +6,9 @@ unset($_SESSION['month']);
 unset($_SESSION['Emonth']);
 unset($_SESSION['year']);
 unset($_SESSION['week']);
+if(isset($_POST['note'])){
+  $_SESSION['note']=$_POST['note'];
+}
 
   if(isset($_GET['prev'])){
     if($_GET['prev']==1){
