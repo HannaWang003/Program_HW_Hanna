@@ -6,9 +6,6 @@ unset($_SESSION['month']);
 unset($_SESSION['Emonth']);
 unset($_SESSION['year']);
 unset($_SESSION['week']);
-if(isset($_POST['note'])){
-  $_SESSION['note']=$_POST['note'];
-}
 
   if(isset($_GET['prev'])){
     if($_GET['prev']==1){
@@ -52,6 +49,9 @@ $_SESSION['week'][]=date("D",$Mfc);
 $Mfc=strtotime("+ 1 days" , $Mfc);
 }
 print_r($_SESSION['week']);
+// $_SESSION['week']=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+header("location:calendar.php")
+?>int_r($_SESSION['week']);
 // $_SESSION['week']=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
 header("location:calendar.php")
 ?>

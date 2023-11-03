@@ -71,7 +71,7 @@ include('./files/program.php');
                     echo "<span>";
             }
     if($everydayM==$month){
-        echo "<a href='calendar.php?noteD=".$everydayTime."'>".$everyday."</a>";
+        echo $everyday;
         echo "</span>";
     }
     else{
@@ -84,19 +84,9 @@ include('./files/program.php');
     ?>
             </div>
         </div>
-
-    <?php
-    // $url="calendar.php?noteD=".$_SESSION['noteD'][$_GET['noteD']];
-    // if(isset($_SESSION['noteD'])){
-    //   header("refresh: 1;url=$url");  
-    // }
-    // else{
-    //     header("refresh: 1;url=calendar.php");
-    // }
-    ?>
-    </div>
         <!-- 整個版面結尾 -->
     </div>
+    <?php header('refresh: 1;url="calendar.php"') ?>
 </body>
 
 </html>
