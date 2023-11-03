@@ -24,19 +24,19 @@ include('./files/program.php');
 
     <div class="container">
         <!-- 整個版面開始 -->
-        
-<div class="containerBox">
-<div class="BoxHeader">
-<div class=BHButton>
-<button><a href="index.php?prev=<?=$month?>&nbsp;&nbsp;&year=<?=$year?>">PREV</a></button>
-<button><a href="index.php?next=<?=$month?>&nbsp;&nbsp;&year=<?=$year?>">NEXT</a></button>
-</div>  
-<h2><?=$Emonth?><?=$year?></h2>
-<div class="time"><?=date("A h:i")?></div>
-</div>
-<div class='containerBoxS'>
-<div class='every everyW'>
-    <?php  
+
+        <div class="containerBox">
+            <div class="BoxHeader">
+                <div class=BHButton>
+                    <button><a href="index.php?prev=<?=$month?>&year=<?=$year?>">PREV</a></button>
+                    <button><a href="index.php?next=<?=$month?>&year=<?=$year?>">NEXT</a></button>
+                </div>
+                <h2><?=$Emonth?><?=$year?></h2>
+                <div class="time"><?=date("A h:i")?></div>
+            </div>
+            <div class='containerBoxS'>
+                <div class='every everyW'>
+                    <?php  
     foreach($_SESSION['week'] as $key => $w){
         if($key==0 || $key==6){
             echo "<span class='bg-c1'>".$w."</span>";
@@ -46,10 +46,10 @@ include('./files/program.php');
         }
     }
     ?>
-    </div>
-    </div>
-    <div class="containerBoxS">
-        <?php
+                </div>
+            </div>
+            <div class="containerBoxS">
+                <?php
     for($j=0;$j < $row; $j++){
         echo "<div class='every everyD'>";
         for($i=0;$i<7;$i++){
@@ -81,11 +81,10 @@ include('./files/program.php');
         echo "</div>";
     }
     ?>
+            </div>
+        </div>
+        <!-- 整個版面結尾 -->
     </div>
-    </div>
-    <!-- 整個版面結尾 -->
-    </div>
-
 </body>
 
 </html>
