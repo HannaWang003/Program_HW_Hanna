@@ -85,12 +85,12 @@ include('./files/program.php');
             </div>
         </div>
         <?php 
-$_SESSION['noteD']=[];
     if(isset($_GET['noteD'])){
         $_SESSION['noteD'][$_GET['noteD']]=$_GET['noteD'];
         ?>
         <div class="note">
 <form action="index.php?" method="post">
+    <?php echo date("Y-m-d",$_GET['noteD']);?>
     <input type="text" name="note" id="note">
     <input type="submit" value="OK">
 </form>
@@ -101,14 +101,16 @@ $_SESSION['noteD']=[];
         echo "<div class='note'></div>";
     }
 
-    // $url="calendar.php?noteD=".$_SESSION['noteD'];
-    // if(isset($_SESSION['noteD'])){
-    //   header("refresh: 1;url=$url");  
-    // }
-    // else{
-        // header("refresh: 1;url=calendar.php");
-    // }
+    $url="calendar.php?noteD=".$_SESSION['noteD'][$_GET['noteD']];
+    if(isset($_SESSION['noteD'])){
+      header("refresh: 1;url=$url");  
+    }
+    else{
+        header("refresh: 1;url=calendar.php");
+    }
+    echo "<pre>";
     print_r($_SESSION['noteD']) ;
+    echo "</pre>";
     ?>
         <!-- 整個版面結尾 -->
     </div>
