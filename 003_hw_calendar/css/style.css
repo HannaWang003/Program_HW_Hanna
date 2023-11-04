@@ -10,7 +10,7 @@
   width: 100vw;
   height:100vh;
   position: relative;
-  /* display:flex; */
+  display:flex;
 }
 
 .containerBox {
@@ -19,16 +19,8 @@
   background-color: rgb(32, 166, 178);
   text-align: center;
   padding-bottom:5vh;
-  /* background-image:url(https://picsum.photos/200/300); */
-  /* 透明感 */
-  /* background-image:radial-gradient(white,transparent); */
-  /* background-image:linear-gradient(90deg, white,transparent); */
-  /* 透明感end */
-  /* 版面1 */
-  /* z-index:100; */
 }
 .BoxHeader {
-  /* background-color:bisque; */
 position:relative;
 height:13vh;
 width:100%;
@@ -37,39 +29,31 @@ padding:0 8vw;
 .time {
   position:absolute;
   bottom:0;
-  right:8vw;
-  /* background-color:lightgreen; */
-  /* background-color: rgba(255, 255, 255, 0.312); */
   font-size: 4vh;
-  /* 透明感 */
-  /* -webkit-backdrop-filter: blur(80px);
-  backdrop-filter: blur(80px); */
-  /* 透明感 end*/
+right:8vw;
+
 }
 .Emonth{
   position:absolute;
   font-size:8vh;
+
 }
 .year{
   position:absolute;
 bottom:0;
   font-size:3vh;
+
 }
 .BHButton{
   width:100%;
-  /* background-color:bisque; */
   text-align:end;
-  padding-right:8vw;
+padding-right:8vw;
 }
 .BHButton button {
-  /* height: 3vw; */
   background-color: rgba(196, 196, 196, 0.5);
   border: 0;
   font-size: 0.8vw;
   padding:0.5vw 1vw;
-}
-.BHButton button a {
-  color: rgb(0, 0, 0);
 }
 .containerBoxS {
   margin-top: 2vh;
@@ -79,33 +63,49 @@ bottom:0;
   width: 5vw;
   height: 5vw;
   border-radius: 50px;
-  background-color: rgba(215, 214, 214, 0.358);
-  color: white;
   line-height: 5vw;
   -webkit-backdrop-filter: blur(80px);
   backdrop-filter: blur(80px);
-  text-shadow: 0 0 2px rgb(0, 0, 0);
 }
 .everyD span {
-  /* display: inline-block;
-  width: 5vw;
-  height: 5vw; */
-  /* border-radius: 50px; */
-  /* background-color:black; */
-  /* background-color: rgba(215, 214, 214, 0.358); */
-  /* color: white;
-  line-height: 5vw; */
-  /* 透明感 */
-  /* -webkit-backdrop-filter: blur(80px);
-  backdrop-filter: blur(80px);
-  text-shadow: 0 0 2px rgb(0, 0, 0); */
-  /* 透明感end */
 }
-.everyD span:hover {
-  background-color: rgba(143, 255, 255, 0.8);
-  /* -webkit-backdrop-filter: blur(0); */
-  /* backdrop-filter: blur(0); */
+
+.everyD > a > .bg-c2:hover {
+  background-image:radial-gradient( rgb(32, 166, 178) 50%,transparent 60%,rgb(255, 255, 255) 80%);
+  color:lightgoldenrodyellow;
+  transition-duration:0.5s;
 }
+
 .today-c1 {
-  box-shadow: inset 0 0 30px rgb(33, 33, 33);
+  box-shadow: inset 0 0 30px rgb(0, 0, 0);
 }
+.today-c1 a{
+  color:black;
+}
+.text-c1{
+  color:lightgoldenrodyellow;
+}
+.text-w{
+  color:white;
+}
+.text-bk{
+  color:black;
+}
+.bg-c0{
+background-color:  rgb(32, 166, 178);
+}
+.bg-c1{
+
+}
+.bg-c2{
+  background-color:lightgoldenrodyellow;
+}
+.bg-c3{
+   background-color: rgba(215, 214, 214, 0.358); 
+}
+/* 加入記事 */
+.notes{
+  width:50%;
+  height:100%;
+}
+/* 加入記事end */

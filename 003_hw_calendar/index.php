@@ -33,13 +33,14 @@ else{
     $_SESSION['year']=date('Y');  
 }
 $month=$_SESSION['month'];
-$monthD1=date("Y-{$month}-1");
+$year=$_SESSION['year'];
+$monthD1=date("{$year}-{$month}-1");
 $monthD1time=strtotime($monthD1);
 $monthD1w=date('w',$monthD1time);
 $_SESSION['PreMDt']=strtotime("-$monthD1w days",$monthD1time);
 $preMonthD=date("Y-m-d",$_SESSION['PreMDt']);
 $monthDend=date("t",strtotime($monthD1));
-$monthDendtime=strtotime("Y-{$month}-$monthDend");
+$monthDendtime=strtotime("{$year}-{$month}-$monthDend");
 $_SESSION['row']=ceil(($monthD1w+$monthDend)/7);
 $_SESSION['Emonth']=date("F",$monthD1time);
 //first row
@@ -49,9 +50,6 @@ $_SESSION['week'][]=date("D",$Mfc);
 $Mfc=strtotime("+ 1 days" , $Mfc);
 }
 print_r($_SESSION['week']);
-// $_SESSION['week']=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
-header("location:calendar.php")
-?>int_r($_SESSION['week']);
 // $_SESSION['week']=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
 header("location:calendar.php")
 ?>

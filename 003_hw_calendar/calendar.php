@@ -27,24 +27,24 @@ include('./files/program.php');
 
         <div class="containerBox">
             <div class="BoxHeader">
-                <div class="Emonth"><?=$Emonth?></div>
-                <div class="year"><?=$year?></div>
-                <div class="time"><?=date("A h:i:s")?></div>
+                <div class="Emonth text-c1"><?=$Emonth?></div>
+                <div class="year text-c1"><?=$year?></div>
+                <div class="time text-c1"><?=date("A h:i:s")?></div>
             </div>
             <div class=BHButton>
-                    <button><a href="index.php?prev=<?=$month?>&year=<?=$year?>">PREV</a></button>
-                    <button><a href="index.php">||</a></button>
-                    <button><a href="index.php?next=<?=$month?>&year=<?=$year?>">NEXT</a></button>
+                    <button><a class="text-bk" href="index.php?prev=<?=$month?>&year=<?=$year?>">PREV</a></button>
+                    <button><a class="text-bk" href="index.php">||</a></button>
+                    <button><a class="text-bk" href="index.php?next=<?=$month?>&year=<?=$year?>">NEXT</a></button>
                 </div>
             <div class='containerBoxS'>
                 <div class='every everyW'>
                     <?php  
     foreach($_SESSION['week'] as $key => $w){
         if($key==0 || $key==6){
-            echo "<span class='bg-c1'>".$w."</span>";
+            echo "<span class='bg-c3'>".$w."</span>";
         }
         else{
-            echo "<span>".$w."</span>";
+            echo "<span class='bg-c3'>".$w."</span>";
         }
     }
     ?>
@@ -61,23 +61,21 @@ include('./files/program.php');
             $everyday=date("d",$everydayTime);
             $every=date("Y-m-d",$everydayTime);
             if($every==date("Y-m-d") && $everydayM==$month){
-                 echo "<span class='today-c1'>";  
+                 echo "<span class='today-c1'>";
+                 echo "<a class='text-bk' href='calendar.php?noteD=$everydayTime'>$everyday</a>";  
+                 echo "</span>";
                 
             }
-            elseif($i==0 || $i==6){
-                echo "<span class='bg-c1'>";
+            elseif($everydayM==$month){
+                echo "<a class='text-bk' href='calendar.php?noteD=$everydayTime'><span class='bg-c2'>";
+                echo $everyday;
+                echo "</span></a>";
             }
     
             else{
-                    echo "<span>";
+                    echo "<span class='bg-c3'>";
+                    echo "&nbsp&nbsp;&nbsp&nbsp;</span>";
             }
-    if($everydayM==$month){
-        echo $everyday;
-        echo "</span>";
-    }
-    else{
-        echo "&nbsp&nbsp;&nbsp&nbsp;</span>";
-    }
     
         }
         echo "</div>";
@@ -85,6 +83,11 @@ include('./files/program.php');
     ?>
             </div>
         </div>
+        <!-- 加入記事 -->
+        <div class="notes bg-c2">
+
+        </div>
+                <!-- 加入記事end -->
         <!-- 整個版面結尾 -->
     </div>
     <?php 
