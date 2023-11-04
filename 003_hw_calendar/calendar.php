@@ -1,6 +1,10 @@
 <?php
 include('./files/program.php');
 ?>
+<?php 
+// 秒數更新;需改用js實現(11/04記)
+// header("Refresh:1");
+?> 
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +17,6 @@ include('./files/program.php');
 
 <body>
     <?php
-
     // 變數
     $row=$_SESSION['row'];
     $FC=$_SESSION['PreMDt'];
@@ -24,17 +27,37 @@ include('./files/program.php');
 
     <div class="container">
         <!-- 整個版面開始 -->
-
         <div class="containerBox">
             <div class="BoxHeader">
                 <div class="Emonth text-c1"><?=$Emonth?></div>
+
                 <div class="year text-c1"><?=$year?></div>
                 <div class="time text-c1"><?=date("A h:i:s")?></div>
-            </div>
-            <div class=BHButton>
+                <div class="BHButton">
                     <button><a class="text-bk" href="index.php?prev=<?=$month?>&year=<?=$year?>">PREV</a></button>
                     <button><a class="text-bk" href="index.php">||</a></button>
                     <button><a class="text-bk" href="index.php?next=<?=$month?>&year=<?=$year?>">NEXT</a></button>
+                 </div>
+            </div>
+            <div class=DateSelect>
+                                <!-- 加入選擇日期功能 -->
+                                <form action="index.php" method="post">
+                                <input type="text" name="year" id="year" onkeyup="value=value.replace(/^(0+)|[^\d]+/g,'')">
+                                <select name="month" id="month">
+                                    <?php
+                                        for($i=0;$i<12;$i++){ 
+                                            if($i+1==$month){
+                                                echo "<option value=".($i+1)." selected>".$_SESSION['monthS'][$i]."</option>";
+                                            } 
+                                            else{                                         
+                                            echo "<option value=".($i+1).">".$_SESSION['monthS'][$i]."</option>";
+                                        } 
+                                        }
+                                    ?>
+                                </select>
+                                <input class="submitB" type="submit" value="⁞⁞⁞">
+                                </form>
+                  <!-- 加入選擇日期功能end -->
                 </div>
             <div class='containerBoxS'>
                 <div class='every everyW'>
@@ -60,16 +83,19 @@ include('./files/program.php');
             $everydayM=date("m",$everydayTime);
             $everyday=date("d",$everydayTime);
             $every=date("Y-m-d",$everydayTime);
-            if($every==date("Y-m-d") && $everydayM==$month){
-                 echo "<a href='calendar.php?noteD=$everydayTime' class='text-bk'><span class='today-c1'>";
-                 echo $everyday;  
-                 echo "</span></a>";
-                
+            if($every==date("Y-m-d")){
+                ?>
+                 <a class="text-bk" href="index.php?month=$month&year=$year&noteD=<?=$everydayTime?>">
+                 <span class='today-c1'><?=$everyday?></span>
+                </a>
+                <?php               
             }
             elseif($everydayM==$month){
-                echo "<a href='calendar.php?noteD=$everydayTime' class='text-bk'><span class='bg-c2'>";
-                echo $everyday;
-                echo "</span></a>";
+                ?>
+                <a class="text-bk" href="index.php?month=<?=$month?>&year=<?=$year?>&noteD=<?=$everydayTime?>">
+                <span class='bg-c2'><?=$everyday?></span>
+            </a>
+            <?php
             }
     
             else{
@@ -85,41 +111,26 @@ include('./files/program.php');
         </div>
         <!-- 加入記事 -->
         <?php 
-    if(isset($_GET['noteD'])){
-        $_SESSION['noteD'][$_GET['noteD']]=$_GET['noteD'];
-        ?>
+    if(isset($_COOKIE['noteD'])){
+        // ?>
         <div class="notes bg-c2">
-<form action="index.php?" method="post">
-    <?php echo date("Y-m-d",$_GET['noteD']);?>
-    <input type="text" name="note" id="note">
-    <input type="submit" value="OK">
-</form>
-
-        <?php  
-            echo "<pre>";
-            print_r($_SESSION['noteD']) ;
-            echo "</pre>";  
-        echo "</div>";
+<!-- <form action="index.php?noteD=<?=$_COOKIE['noteD']?>" method="post"> -->
+    <?php echo date("Y-m-d",$_COOKIE['noteD']);?>
+    <!-- <input type="text" name="note" id="note"> -->
+    <!-- <input type="submit" value="OK"> -->
+<!-- </form> -->
+</div>
+        <?php 
     }
     else{
         echo "<div class='notes bg-c2'></div>";
     }
 
-    ?>
+    // ?>
                 <!-- 加入記事end -->
         <!-- 整個版面結尾 -->
     </div>
-    
- <!-- 秒數變動用 -->
- <?php 
-$url="calendar.php?noteD=".$_SESSION['noteD'][$_GET['noteD']];
-if(isset($_SESSION['noteD'])){
-  header("refresh: 1;url=$url");  
-}
-else{
-    header("refresh: 1;url=calendar.php");
-}
- ?>
+   
 </body>
 
 </html>

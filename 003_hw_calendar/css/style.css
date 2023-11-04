@@ -45,9 +45,38 @@ bottom:0;
 
 }
 .BHButton{
+  position:absolute;
+  right:8vw;
+  top:2vh;
+}
+.DateSelect{
   width:100%;
-  text-align:end;
-padding-right:8vw;
+  text-align:start;
+padding-left:8vw;
+}
+.DateSelect form{
+  width:80%;
+}
+.submitB{
+background-color:transparent;
+border:0;
+font-size:1.5vw;
+}
+.submitB:hover{
+  cursor: pointer;
+}
+.DateSelect input:nth-child(1){
+  width:20%;
+  height:4vh;
+  font-size:1vw;
+  background-color:rgba(196, 196, 196, 0.5);
+  border:0;
+}
+.DateSelect select{
+  width:22%;
+  height:4vh;
+  font-size:1vw;
+  background-color:rgba(196, 196, 196, 0.5);
 }
 .BHButton button {
   background-color: rgba(196, 196, 196, 0.5);

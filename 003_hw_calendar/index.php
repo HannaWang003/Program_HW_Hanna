@@ -6,8 +6,26 @@ unset($_SESSION['month']);
 unset($_SESSION['Emonth']);
 unset($_SESSION['year']);
 unset($_SESSION['week']);
-
-  if(isset($_GET['prev'])){
+unset($_SESSION['monthS']);
+// if($_GET['month'] && $_GET['year']){
+//   $_SESSION['month']=$_GET['month'];
+//   $_SESSION['year']=$_GET['year'];
+// }
+// 存入12個月
+for($i=1;$i<=12;$i++){
+  $monthS=strtotime("2023-$i-1");
+  $_SESSION['monthS'][]=date('F',$monthS);
+}
+// 開始設定月曆
+if(isset($_POST['year']) && !empty($_POST['year'])){
+  $_SESSION['month']=$_POST['month'];
+  $_SESSION['year']=$_POST['year'];
+}
+elseif(isset($_POST['month'])){
+  $_SESSION['month']=$_POST['month'];
+  $_SESSION['year']=date("Y");
+}
+  elseif(isset($_GET['prev'])){
     if($_GET['prev']==1){
       $_SESSION['month']=12;
       $_SESSION['year']=$_GET['year']-1;
@@ -42,14 +60,22 @@ $preMonthD=date("Y-m-d",$_SESSION['PreMDt']);
 $monthDend=date("t",strtotime($monthD1));
 $monthDendtime=strtotime("{$year}-{$month}-$monthDend");
 $_SESSION['row']=ceil(($monthD1w+$monthDend)/7);
-$_SESSION['Emonth']=date("F",$monthD1time);
+$_SESSION['Emonth']=date("M",$monthD1time);
 //first row
 $Mfc=$_SESSION['PreMDt'];
 for($i=0;$i<7;$i++){
 $_SESSION['week'][]=date("D",$Mfc);
 $Mfc=strtotime("+ 1 days" , $Mfc);
 }
-print_r($_SESSION['week']);
+//note
+if(isset($_GET['noteD'])){
+setcookie('noteD',$_GET['noteD'],time()+5);
+setcookie('noteDate',date("Y-m-d",$_COOKIE['noteD']),time()+60*60*24*365);
+}
+if(isset($_POST['note']) && !empty($_POST['note'])){
+setcookie("note",$_POST['note'],time()+60*60*24*365);
+setcookie($_COOKIE['noteDate'],$_COOKIE['note'],time()+60*60*24*365);
+}
 // $_SESSION['week']=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
 header("location:calendar.php")
 ?>
