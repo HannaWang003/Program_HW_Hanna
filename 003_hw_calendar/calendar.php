@@ -61,13 +61,13 @@ include('./files/program.php');
             $everyday=date("d",$everydayTime);
             $every=date("Y-m-d",$everydayTime);
             if($every==date("Y-m-d") && $everydayM==$month){
-                 echo "<span class='today-c1'>";
-                 echo "<a class='text-bk' href='calendar.php?noteD=$everydayTime'>$everyday</a>";  
-                 echo "</span>";
+                 echo "<a href='calendar.php?noteD=$everydayTime' class='text-bk'><span class='today-c1'>";
+                 echo $everyday;  
+                 echo "</span></a>";
                 
             }
             elseif($everydayM==$month){
-                echo "<a class='text-bk' href='calendar.php?noteD=$everydayTime'><span class='bg-c2'>";
+                echo "<a href='calendar.php?noteD=$everydayTime' class='text-bk'><span class='bg-c2'>";
                 echo $everyday;
                 echo "</span></a>";
             }
@@ -92,7 +92,15 @@ include('./files/program.php');
     </div>
     
  <!-- 秒數變動用 -->
- <?php header('refresh: 1;url="calendar.php"') ?>
+ <?php 
+ $url="calendar.php?noteD=".$_SESSION['noteD'][$_GET['noteD']];
+ if(isset($_SESSION['noteD'])){
+   header("refresh: 1;url=$url");  
+ }
+ else{
+     header("refresh: 1;url=calendar.php");
+ }
+ ?>
 </body>
 
 </html>
