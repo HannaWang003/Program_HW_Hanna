@@ -90,10 +90,9 @@ include('./files/program.php');
                 <!-- 加入記事end -->
         <!-- 整個版面結尾 -->
     </div>
-    <?php 
-    // 秒數變動用
-    // header('refresh: 1;url="calendar.php"')
-    ?>
+    
+ <!-- 秒數變動用 -->
+ <?php header('refresh: 1;url="calendar.php"') ?>
 </body>
 
 </html>
