@@ -7,7 +7,7 @@ include('./files/program.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yearly Calendar</title>
+    <title>YearlyCalendar</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
@@ -92,7 +92,7 @@ include('./files/program.php');
     </div>
     <?php 
     // 秒數變動用
-    // header('refresh: 1;url="calendar.php"') 
+    // header('refresh: 1;url="calendar.php"')
     ?>
 </body>
 
