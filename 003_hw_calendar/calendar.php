@@ -27,14 +27,15 @@ include('./files/program.php');
 
         <div class="containerBox">
             <div class="BoxHeader">
-                <div class=BHButton>
+                <div class="Emonth"><?=$Emonth?></div>
+                <div class="year"><?=$year?></div>
+                <div class="time"><?=date("A h:i:s")?></div>
+            </div>
+            <div class=BHButton>
                     <button><a href="index.php?prev=<?=$month?>&year=<?=$year?>">PREV</a></button>
                     <button><a href="index.php">||</a></button>
                     <button><a href="index.php?next=<?=$month?>&year=<?=$year?>">NEXT</a></button>
                 </div>
-                <h2><?=$Emonth?><?=$year?></h2>
-                <div class="time"><?=date("A h:i:s")?></div>
-            </div>
             <div class='containerBoxS'>
                 <div class='every everyW'>
                     <?php  
@@ -86,7 +87,10 @@ include('./files/program.php');
         </div>
         <!-- 整個版面結尾 -->
     </div>
-    <?php header('refresh: 1;url="calendar.php"') ?>
+    <?php 
+    // 秒數變動用
+    // header('refresh: 1;url="calendar.php"') 
+    ?>
 </body>
 
 </html>
