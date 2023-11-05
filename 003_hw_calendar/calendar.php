@@ -73,12 +73,13 @@ $Mfc=strtotime("+ 1 days" , $Mfc);
 }
 //note
 if(isset($_GET['noteD'])){
-setcookie('noteD',$_GET['noteD'],time()+5);
-setcookie('noteDate',date("Y-m-d",$_COOKIE['noteD']),time()+60*60*24*365);
+  // 用以判斷form是否出現
+setcookie("noteD",$_GET['noteD'],time()+600);
 }
 if(isset($_POST['note']) && !empty($_POST['note'])){
-setcookie("note",$_POST['note'],time()+60*60*24*365);
-setcookie($_COOKIE['noteDate'],$_COOKIE['note'],time()+60*60*24*365);
+  // 用以產生記事內容
+setcookie("dateN[".$_GET['noteD']."]",$_GET['noteD'],time()+60*60*24*365);
+setcookie("note[".$_GET['noteD']."]",$_POST['note'],time()+60*60*24*365);
 }
 // $_SESSION['week']=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
 header("location:index.php?month=$month");
