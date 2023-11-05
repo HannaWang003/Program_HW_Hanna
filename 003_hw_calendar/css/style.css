@@ -96,7 +96,11 @@ font-size:1.5vw;
   -webkit-backdrop-filter: blur(80px);
   backdrop-filter: blur(80px);
 }
-.everyD span {
+.everyD{
+  width: 70%;
+  margin: auto;
+  justify-content: space-around;
+  display: flex;
 }
 
 .everyD > a > .bg-c2:hover {
