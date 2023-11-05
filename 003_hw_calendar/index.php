@@ -25,6 +25,10 @@ elseif(isset($_POST['month'])){
   $_SESSION['month']=$_POST['month'];
   $_SESSION['year']=date("Y");
 }
+elseif(isset($_GET['month']) && isset($_GET['year']) && isset($_GET['noteD'])){
+  $_SESSION['month']=$_GET['month'];
+  $_SESSION['year']=$_GET['year'];
+}
   elseif(isset($_GET['prev'])){
     if($_GET['prev']==1){
       $_SESSION['month']=12;
