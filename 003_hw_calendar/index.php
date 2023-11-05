@@ -124,12 +124,12 @@ if(isset($_GET['month'])){
     <input type="submit" value="OK">
 </form>
 <div class="containerNote">
-    <h2>這是一天只能記一件事的備忘錄</h2>
+    <h2>only for one thing a day</h2>
 <?php
 if(isset($_COOKIE['note'])){
     foreach($_COOKIE['note'] as $key => $val){
         intval($key);
-        echo date("Y-m-d",$key)."-".$val;
+        echo date("Y-m-d",$key)."&nbsp;&nbsp;-&nbsp;&nbsp;".$val;
         echo "<br>";
     }
 }
