@@ -107,6 +107,7 @@ font-size:1.5vw;
   background-image:radial-gradient( rgb(32, 166, 178) 50%,transparent 60%,rgb(255, 255, 255) 80%);
   color:lightgoldenrodyellow;
   transition-duration:0.5s;
+  cursor:cell;
 }
 
 .today-c1 {
@@ -138,5 +139,14 @@ background-color:  rgb(32, 166, 178);
 .notes{
   width:50%;
   height:100%;
+  padding:2vw;
 }
+.notesBox{
+  height:10vw;
+}
+.notesBox > p:nth-child(1){
+  font-size:1.5vw;
+  margin-bottom:0.5vw;
+}
+
 /* 加入記事end */
