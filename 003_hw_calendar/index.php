@@ -2,7 +2,6 @@
 include('./files/program.php');
 ?>
 <?php 
-if(isset($_GET['month'])){
 // 秒數更新;需改用js實現(11/04記)
 // header("Refresh:1");
 ?> 
@@ -13,9 +12,13 @@ if(isset($_GET['month'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>☼CALENDAR</title>
+    <link rel="icon" href="./img/logo.ico" type="image/x-icon"/> 
     <link rel="stylesheet" href="./css/style.css">
-</head>
 
+</head>
+<?php
+if(isset($_GET['month'])){
+?>
 <body>
     <?php
     // 變數
