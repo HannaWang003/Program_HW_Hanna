@@ -3,7 +3,7 @@ include('./files/program.php');
 ?>
 <?php 
 // 秒數更新;需改用js實現(11/04記)
-// header("Refresh:1");
+header("Refresh:60");
 ?> 
 <!DOCTYPE html>
 <html lang="en">
@@ -36,7 +36,7 @@ if(isset($_GET['month'])){
                 <div class="Emonth text-c1"><?=$Emonth?></div>
 
                 <div class="year text-c1"><?=$year?></div>
-                <div class="time text-c1"><?=date("A h:i:s")?></div>
+                <div class="time text-c1"><?=date("A h:i")?></div>
                 <div class="BHButton">
                     <button><a class="text-bk" href="calendar.php?prev=<?=$month?>&year=<?=$year?>">PREV</a></button>
                     <button><a class="text-bk" href="calendar.php">||</a></button>
@@ -89,7 +89,7 @@ if(isset($_GET['month'])){
             $every=date("Y-m-d",$everydayTime);
             if($every==date("Y-m-d")){
                 ?>
-                 <a class="text-bk" href="calendar.php?month=$month&year=$year&noteD=<?=$everydayTime?>">
+                 <a class="text-bk" href="calendar.php?month=<?=$month?>&year=<?=$year?>&noteD=<?=$everydayTime?>">
                  <span class='today-c1'><?=$everyday?></span>
                 </a>
                 <?php               
