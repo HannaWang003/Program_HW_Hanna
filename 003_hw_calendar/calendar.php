@@ -54,6 +54,17 @@ else{
     $_SESSION['month']=date('m');
     $_SESSION['year']=date('Y');  
 }
+//note
+if(isset($_GET['noteD'])){
+  // 用以判斷form是否出現
+setcookie("noteD",$_GET['noteD'],time()+60*60*24*365);
+}
+if(isset($_POST['note']) && !empty($_POST['note'])){
+  // 用以產生記事內容
+setcookie("dateN[".$_GET['noteD']."]",$_GET['noteD'],time()+60*60*24*365);
+setcookie("note[".$_GET['noteD']."]",$_POST['note'],time()+60*60*24*365);
+}
+// $_SESSION['week']=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
 $month=$_SESSION['month'];
 $year=$_SESSION['year'];
 $monthD1=date("{$year}-{$month}-1");
@@ -71,17 +82,6 @@ for($i=0;$i<7;$i++){
 $_SESSION['week'][]=date("D",$Mfc);
 $Mfc=strtotime("+ 1 days" , $Mfc);
 }
-//note
-if(isset($_GET['noteD'])){
-  // 用以判斷form是否出現
-setcookie("noteD",$_GET['noteD'],time()+60*60*24*365);
-// 使用session
-}
-if(isset($_POST['note']) && !empty($_POST['note'])){
-  // 用以產生記事內容
-setcookie("dateN[".$_GET['noteD']."]",$_GET['noteD'],time()+60*60*24*365);
-setcookie("note[".$_GET['noteD']."]",$_POST['note'],time()+60*60*24*365);
-}
-// $_SESSION['week']=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+
 header("location:index.php?month=$month");
 ?>

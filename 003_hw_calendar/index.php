@@ -119,7 +119,7 @@ if(isset($_GET['month'])){
     if(isset($_COOKIE['noteD'])){
         // ?>
         <div class="notes bg-c2">
-            <form action="calendar.php?noteD=<?=$_COOKIE['noteD']?>" method="post">
+            <form action="calendar.php?noteD=<?=$_COOKIE['noteD']?>&month=<?=$month?>&year=<?=$year?>" method="post">
                 <?php echo date("Y-m-d",$_COOKIE['noteD']);?>
                 <input type="text" name="note" id="note">
                 <input type="submit" value="OK">
