@@ -125,7 +125,7 @@ if(isset($_GET['month'])){
                 <input type="submit" value="OK">
             </form>
             <div class="containerNote">
-                <h2>only for one thing a day</h2>
+                <h2>ONE THING A DAY KEEP THE PROBLEM AWAY</h2>
                 <?php
 if(isset($_COOKIE['note'])){
     foreach($_COOKIE['note'] as $key => $val){
