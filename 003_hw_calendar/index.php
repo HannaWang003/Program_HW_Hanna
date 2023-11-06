@@ -4,7 +4,7 @@ include('./files/program.php');
 <?php 
 // 秒數更新;需改用js實現(11/04記)
 header("Refresh:60");
-?> 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,13 +12,14 @@ header("Refresh:60");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>☼CALENDAR</title>
-    <link rel="icon" href="./img/logo.ico" type="image/x-icon"/> 
+    <link rel="icon" href="./img/logo.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./css/style.css">
 
 </head>
 <?php
 if(isset($_GET['month'])){
 ?>
+
 <body>
     <?php
     // 變數
@@ -41,14 +42,14 @@ if(isset($_GET['month'])){
                     <button><a class="text-bk" href="calendar.php?prev=<?=$month?>&year=<?=$year?>">PREV</a></button>
                     <button><a class="text-bk" href="calendar.php">||</a></button>
                     <button><a class="text-bk" href="calendar.php?next=<?=$month?>&year=<?=$year?>">NEXT</a></button>
-                 </div>
+                </div>
             </div>
             <div class=DateSelect>
-                                <!-- 加入選擇日期功能 -->
-                                <form action="calendar.php" method="post">
-                                <input type="text" name="year" id="year" onkeyup="value=value.replace(/^(0+)|[^\d]+/g,'')">
-                                <select name="month" id="month">
-                                    <?php
+                <!-- 加入選擇日期功能 -->
+                <form action="calendar.php" method="post">
+                    <input type="text" name="year" id="year" onkeyup="value=value.replace(/^(0+)|[^\d]+/g,'')">
+                    <select name="month" id="month">
+                        <?php
                                         for($i=0;$i<12;$i++){ 
                                             if($i+1==$month){
                                                 echo "<option value=".($i+1)." selected>".$_SESSION['monthS'][$i]."</option>";
@@ -58,11 +59,11 @@ if(isset($_GET['month'])){
                                         } 
                                         }
                                     ?>
-                                </select>
-                                <input class="submitB" type="submit" value="⁞⁞⁞">
-                                </form>
-                  <!-- 加入選擇日期功能end -->
-                </div>
+                    </select>
+                    <input class="submitB" type="submit" value="⁞⁞⁞">
+                </form>
+                <!-- 加入選擇日期功能end -->
+            </div>
             <div class='containerBoxS'>
                 <div class='every everyW'>
                     <?php  
@@ -89,17 +90,17 @@ if(isset($_GET['month'])){
             $every=date("Y-m-d",$everydayTime);
             if($every==date("Y-m-d")){
                 ?>
-                 <a class="text-bk" href="calendar.php?month=<?=$month?>&year=<?=$year?>&noteD=<?=$everydayTime?>">
-                 <span class='today-c1'><?=$everyday?></span>
+                <a class="text-bk" href="calendar.php?month=<?=$month?>&year=<?=$year?>&noteD=<?=$everydayTime?>">
+                    <span class='today-c1'><?=$everyday?></span>
                 </a>
                 <?php               
             }
             elseif($everydayM==$month){
                 ?>
                 <a class="text-bk" href="calendar.php?month=<?=$month?>&year=<?=$year?>&noteD=<?=$everydayTime?>">
-                <span class='bg-c2'><?=$everyday?></span>
-            </a>
-            <?php
+                    <span class='bg-c2'><?=$everyday?></span>
+                </a>
+                <?php
             }
     
             else{
@@ -118,14 +119,14 @@ if(isset($_GET['month'])){
     if(isset($_COOKIE['noteD'])){
         // ?>
         <div class="notes bg-c2">
-<form action="calendar.php?noteD=<?=$_COOKIE['noteD']?>" method="post">
-    <?php echo date("Y-m-d",$_COOKIE['noteD']);?>
-    <input type="text" name="note" id="note">
-    <input type="submit" value="OK">
-</form>
-<div class="containerNote">
-    <h2>only for one thing a day</h2>
-<?php
+            <form action="calendar.php?noteD=<?=$_COOKIE['noteD']?>" method="post">
+                <?php echo date("Y-m-d",$_COOKIE['noteD']);?>
+                <input type="text" name="note" id="note">
+                <input type="submit" value="OK">
+            </form>
+            <div class="containerNote">
+                <h2>only for one thing a day</h2>
+                <?php
 if(isset($_COOKIE['note'])){
     foreach($_COOKIE['note'] as $key => $val){
         intval($key);
@@ -134,8 +135,8 @@ if(isset($_COOKIE['note'])){
     }
 }
 ?>
-</div>
-</div>
+            </div>
+        </div>
         <?php 
     }
     else{
@@ -143,10 +144,10 @@ if(isset($_COOKIE['note'])){
     }
 
     // ?>
-                <!-- 加入記事end -->
+        <!-- 加入記事end -->
         <!-- 整個版面結尾 -->
     </div>
-   
+
 </body>
 
 </html>

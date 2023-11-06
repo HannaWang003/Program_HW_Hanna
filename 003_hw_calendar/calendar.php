@@ -74,7 +74,8 @@ $Mfc=strtotime("+ 1 days" , $Mfc);
 //note
 if(isset($_GET['noteD'])){
   // 用以判斷form是否出現
-setcookie("noteD",$_GET['noteD'],time()+600);
+setcookie("noteD",$_GET['noteD'],time()+60*60*24*365);
+// 使用session
 }
 if(isset($_POST['note']) && !empty($_POST['note'])){
   // 用以產生記事內容
