@@ -118,14 +118,17 @@ if(isset($_GET['month'])){
         <?php 
     if(isset($_COOKIE['noteD'])){
         // ?>
-        <div class="notes bg-c2">
+        <!-- <div class="notes bg-c2"> -->
+        <div class="notes">
+            <div class="containerNote">
+            <p>ONE THING A DAY KEEP PROBLEM AWAY</p>
             <form action="calendar.php?noteD=<?=$_COOKIE['noteD']?>&month=<?=$month?>&year=<?=$year?>" method="post">
                 <?php echo date("Y-m-d",$_COOKIE['noteD']);?>
                 <input type="text" name="note" id="note">
                 <input type="submit" value="OK">
             </form>
-            <div class="containerNote">
-                <h2>ONE THING A DAY KEEP THE PROBLEM AWAY</h2>
+            
+                
                 <?php
 if(isset($_COOKIE['note'])){
     foreach($_COOKIE['note'] as $key => $val){
