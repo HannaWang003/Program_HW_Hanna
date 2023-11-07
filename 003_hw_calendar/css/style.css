@@ -166,7 +166,7 @@
   color: white;
 }
 .containerNote input[type="text"],
-.container input[type="submit"] {
+.containerNote input[type="submit"] {
   width: 50%;
   height: 3vw;
   background-color: rgba(215, 214, 214, 0.358);
