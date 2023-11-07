@@ -32,6 +32,9 @@ if(isset($_GET['month'])){
     <div class="container">
         <!-- 整個版面開始 -->
         <div class="containerBox">
+            <?php
+             echo $_SESSION['season'];
+             ?>
             <div class="BoxHeader">
                 <div class="Emonth text-c1"><?=$Emonth?></div>
 

@@ -16,7 +16,10 @@
 .containerBox {
   width: 50%;
   height: 100%;
+    /* background-color: rgb(135, 222, 230); */
   background-color: rgb(32, 166, 178);
+  /* background-image:url(../img/bg11.jpg);
+  background-size:20%; */
   text-align: center;
   padding-bottom: 5vh;
   box-shadow:inset -2.5vw 0px 1.8vw rgb(79, 79, 79);

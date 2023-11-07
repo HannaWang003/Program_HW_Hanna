@@ -84,6 +84,23 @@ for($i=0;$i<7;$i++){
 $_SESSION['week'][]=date("D",$Mfc);
 $Mfc=strtotime("+ 1 days" , $Mfc);
 }
+//判斷季節
 
+switch($month){
+  case $month<=5 && $month>=3:
+     $_SESSION['season']='season-1';
+  break;
+  case $month<=8 && $month>=6:
+    $_SESSION['season']='season-2';
+ break;
+ case $month<=11 && $month>=9:
+  $_SESSION['season']='season-3';
+break;
+case $month<=12 && $month>=2:
+  $_SESSION['season']='season-4';
+break;
+  
+ 
+}
 header("location:index.php?month=$month");
 ?>
