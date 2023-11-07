@@ -121,13 +121,16 @@ if(isset($_GET['month'])){
         <!-- <div class="notes bg-c2"> -->
         <div class="notes">
             <div class="containerNote">
-            <form action="calendar.php?noteD=<?=$_COOKIE['noteD']?>&month=<?=$month?>&year=<?=$year?>" method="post">
-                <?php echo date("Y-m-d",$_COOKIE['noteD']);?>
-                <input type="text" name="note" id="note">
-                <input type="submit" value="OK">
-            </form>
-            
-                
+                <!-- 長駐 -->
+                <form action="calendar.php?noteD=<?=$_COOKIE['noteD']?>&month=<?=$month?>&year=<?=$year?>"
+                    method="post">
+                    <?php echo date("Y-m-d",$_COOKIE['noteD']);?>
+                    <input type="text" name="note" id="note">
+                    <input type="submit" value="OK">
+                </form>
+                <!-- 長駐end -->
+
+
                 <?php
 if(isset($_COOKIE['note'])){
     foreach($_COOKIE['note'] as $key => $val){
