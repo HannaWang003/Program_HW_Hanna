@@ -114,7 +114,7 @@ if(isset($_GET['month'])){
             </div>
         </div>
         <!-- 加入記事 -->
-        <div class="notes" style="background-image:url('./img/bg<?=$_GET['month']?>.jpg')">
+        <div class="notes" style="background-image:url('./img/bg<?=$_GET['month']?>.jpg');background-size:20%;">
              <div class="containerNote">
                 <!-- 長駐 -->
                 <form action="calendar.php?noteD=<?=$_COOKIE['noteD']?>&month=<?=$month?>&year=<?=$year?>"
