@@ -115,11 +115,12 @@ if(isset($_GET['month'])){
             </div>
         </div>
         <!-- 加入記事 -->
+        <div class="notes">
         <?php 
     if(isset($_COOKIE['noteD'])){
         // ?>
         <!-- <div class="notes bg-c2"> -->
-        <div class="notes">
+        
             <div class="containerNote">
                 <!-- 長駐 -->
                 <form action="calendar.php?noteD=<?=$_COOKIE['noteD']?>&month=<?=$month?>&year=<?=$year?>"
@@ -145,11 +146,11 @@ if(isset($_COOKIE['note'])){
         </div>
         <?php 
     }
-    else{
-        echo "<div class='notes bg-c2'></div>";
-    }
 
-    // ?>
+
+
+    ?>
+    </div>
         <!-- 加入記事end -->
         <!-- 整個版面結尾 -->
     </div>
