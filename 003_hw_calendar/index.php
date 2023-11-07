@@ -5,6 +5,9 @@ include('./files/program.php');
 // 秒數更新;需改用js實現(11/04記)
 header("Refresh:60");
 ?>
+<?php
+if(isset($_GET['month'])){
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,12 +19,8 @@ header("Refresh:60");
     <link rel="stylesheet" href="./css/style.css">
 
 </head>
-<?php
-if(isset($_GET['month'])){
-?>
-
 <body>
-    <?php
+<?php
     // 變數
     $row=$_SESSION['row'];
     $FC=$_SESSION['PreMDt'];
@@ -115,13 +114,8 @@ if(isset($_GET['month'])){
             </div>
         </div>
         <!-- 加入記事 -->
-        <div class="notes">
-        <?php 
-    if(isset($_COOKIE['noteD'])){
-        // ?>
-        <!-- <div class="notes bg-c2"> -->
-        
-            <div class="containerNote">
+        <div class="notes" style="background-image:url('./img/bg<?=$_GET['month']?>.jpg')">
+             <div class="containerNote">
                 <!-- 長駐 -->
                 <form action="calendar.php?noteD=<?=$_COOKIE['noteD']?>&month=<?=$month?>&year=<?=$year?>"
                     method="post">
@@ -144,12 +138,6 @@ if(isset($_COOKIE['note'])){
             </div>
             <p>ONE THING A DAY KEEP PROBLEM AWAY</p>
         </div>
-        <?php 
-    }
-
-
-
-    ?>
     </div>
         <!-- 加入記事end -->
         <!-- 整個版面結尾 -->
