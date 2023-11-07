@@ -8,81 +8,78 @@
   margin: auto;
   background-color: black;
   width: 100vw;
-  height:100vh;
+  height: 100vh;
   position: relative;
-  display:flex;
+  display: flex;
 }
 
 .containerBox {
   width: 50%;
-  height:100%;
+  height: 100%;
   background-color: rgb(32, 166, 178);
   text-align: center;
-  padding-bottom:5vh;
+  padding-bottom: 5vh;
 }
 .BoxHeader {
-position:relative;
-height:13vh;
-width:100%;
-padding:0 8vw;
+  position: relative;
+  height: 13vh;
+  width: 100%;
+  padding: 0 8vw;
 }
 .time {
-  position:absolute;
-  bottom:0;
+  position: absolute;
+  bottom: 0;
   font-size: 4vh;
-right:8vw;
-
+  right: 8vw;
 }
-.Emonth{
-  position:absolute;
-  font-size:8vh;
-
+.Emonth {
+  position: absolute;
+  font-size: 8vh;
 }
-.year{
-  position:absolute;
-bottom:0;
-  font-size:3vh;
-
+.year {
+  position: absolute;
+  bottom: 0;
+  font-size: 3vh;
 }
-.BHButton{
-  position:absolute;
-  right:8vw;
-  top:2vh;
+.BHButton {
+  position: absolute;
+  right: 8vw;
+  top: 2vh;
 }
-.DateSelect{
-  width:100%;
-  text-align:start;
-padding-left:8vw;
+.DateSelect {
+  width: 100%;
+  text-align: start;
+  padding-left: 8vw;
 }
-.DateSelect form{
-  width:80%;
+.DateSelect form {
+  width: 80%;
 }
-.submitB{
-background-color:transparent;
-border:0;
-font-size:1.5vw;
+.submitB {
+  background-color: transparent;
+  border: 0;
+  font-size: 1.5vw;
 }
-.submitB:hover{
+.submitB:hover {
   cursor: pointer;
 }
-.DateSelect input:nth-child(1){
-  width:20%;
-  height:4vh;
-  font-size:1vw;
-  background-color:rgba(196, 196, 196, 0.5);
-  border:0;
+.DateSelect input:nth-child(1) {
+  width: 20%;
+  height: 4vh;
+  font-size: 1vw;
+  background-color: rgba(196, 196, 196, 0.5);
+  border: 0;
 }
-.DateSelect select{
-  width:22%;
-  height:4vh;
-  font-size:1vw;
-  background-color:rgba(196, 196, 196, 0.5);
+.DateSelect select {
+  width: 22%;
+  height: 4vh;
+  font-size: 1vw;
+  background-color: rgba(196, 196, 196, 0.5);
 }
 .BHButton button {
   background-color: rgba(196, 196, 196, 0.5);
   border: 0;
   font-size: 0.8vw;
-  padding:0.5vw 1vw;
+  padding: 0.5vw 1vw;
 }
 .containerBoxS {
   margin-top: 2vh;
@@ -96,7 +93,7 @@ font-size:1.5vw;
   -webkit-backdrop-filter: blur(80px);
   backdrop-filter: blur(80px);
 }
-.everyD{
+.everyD {
   width: 70%;
   margin: auto;
   justify-content: space-around;
@@ -104,79 +101,83 @@ font-size:1.5vw;
 }
 
 .everyD > a > .bg-c2:hover {
-  background-image:radial-gradient( rgb(32, 166, 178) 50%,transparent 60%,rgb(255, 255, 255) 80%);
-  color:lightgoldenrodyellow;
-  transition-duration:0.5s;
-  cursor:cell;
+  background-image: radial-gradient(
+    rgb(32, 166, 178) 50%,
+    transparent 60%,
+    rgb(255, 255, 255) 80%
+  );
+  color: lightgoldenrodyellow;
+  transition-duration: 0.5s;
+  cursor: cell;
 }
 
 .today-c1 {
   box-shadow: inset 0 0 30px rgb(0, 0, 0);
-  color:white;
+  color: white;
 }
-.text-c1{
-  color:lightgoldenrodyellow;
+.text-c1 {
+  color: lightgoldenrodyellow;
 }
-.text-w{
-  color:white;
+.text-w {
+  color: white;
 }
-.text-bk{
-  color:black;
+.text-bk {
+  color: black;
 }
-.bg-c0{
-background-color:  rgb(32, 166, 178);
+.bg-c0 {
+  background-color: rgb(32, 166, 178);
 }
-.bg-c1{
-
+.bg-c1 {
 }
-.bg-c2{
-  background-color:lightgoldenrodyellow;
+.bg-c2 {
+  background-color: lightgoldenrodyellow;
 }
-.bg-c3{
-   background-color: rgba(215, 214, 214, 0.358); 
+.bg-c3 {
+  background-color: rgba(215, 214, 214, 0.358);
 }
 /* 加入記事 */
-.notes{
-  width:50%;
-  height:100%;
-  padding:2vw;
-  background-image:url(../img/bg.jpg);
-  background-size:cover;
-  display:flex;
+.notes {
+  width: 50%;
+  height: 100%;
+  padding: 2vw;
+  background-image: url(../img/1.jpg);
+  background-size: cover;
+  display: flex;
   flex-direction: column;
-  align-items:center;
-  justify-content:center;
+  align-items: center;
+  justify-content: center;
   box-shadow: inset 50px 0 60px rgb(0, 0, 0);
 }
-.notes>p{
-  position:absolute;
-  bottom:2vw;
-  right:2vw;
-  font-size:1vw;
-  color:white;
+.notes > p {
+  position: absolute;
+  bottom: 2vw;
+  right: 2vw;
+  font-size: 1vw;
+  color: white;
   text-decoration: overline;
-  }
-.containerNote{
-  position:relative;
-  width:80%;
-  height:60%;
+}
+.containerNote {
+  position: relative;
+  width: 80%;
+  height: 60%;
   backdrop-filter: blur(5px);
-  padding:1vw 2vw;
-  border:1px solid black;
-  color:white;
+  padding: 1vw 2vw;
+  border: 1px solid black;
+  color: white;
 }
-.containerNote input[type='text'],.container input[type='submit']{
-  width:50%;
-  height:3vw;
-  background-color:rgba(215, 214, 214, 0.358); 
-  border:0;
+.containerNote input[type="text"],
+.container input[type="submit"] {
+  width: 50%;
+  height: 3vw;
+  background-color: rgba(215, 214, 214, 0.358);
+  border: 0;
 }
-.containerNote input[type='submit']{
-  width:15%;
-  box-shadow:inset 0 0 10px white;
+.containerNote input[type="submit"] {
+  width: 15%;
+  box-shadow: inset 0 0 10px white;
 }
-.containerNote input[type='submit']:hover{
-  box-shadow:inset 0 0 0px white;
+.containerNote input[type="submit"]:hover {
+  box-shadow: inset 0 0 0px white;
   cursor: pointer;
 }
 
