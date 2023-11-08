@@ -140,6 +140,7 @@ if(isset($_COOKIE['note'])){
 ?>
             </div>
             <p>ONE THING A DAY KEEP PROBLEM AWAY</p>
+            <!-- 背景圖片取自:https://lapeacefulday.com/ -->
         </div>
     </div>
         <!-- 加入記事end -->
