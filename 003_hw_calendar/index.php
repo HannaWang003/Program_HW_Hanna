@@ -3,7 +3,7 @@ include('./files/program.php');
 ?>
 <?php 
 // 秒數更新;需改用js實現(11/04記)
-header("Refresh:60");
+// header("Refresh:60");
 ?>
 <?php
 if(isset($_GET['month'])){
@@ -117,18 +117,18 @@ if(isset($_GET['month'])){
             </div>
         </div>
         <!-- 加入記事 -->
+        <!-- 長駐 -->
         <div class="notes" style="background-image:url('./img/bg<?=$_GET['month']?>.jpg');background-size:20%;">
-             <div class="containerNote">
-                <!-- 長駐 -->
+        <div class="notes_header">
+        <h2><?=date("Y-m-d",$_COOKIE['noteD']);?></h2>
                 <form action="calendar.php?noteD=<?=$_COOKIE['noteD']?>&month=<?=$month?>&year=<?=$year?>"
                     method="post">
-                    <?php echo date("Y-m-d",$_COOKIE['noteD']);?>
                     <input type="text" name="note" id="note">
                     <input type="submit" value="OK">
                 </form>
+            </div>
                 <!-- 長駐end -->
-
-
+                <div class="containerNote">                
                 <?php
 if(isset($_COOKIE['note'])){
     foreach($_COOKIE['note'] as $key => $val){
@@ -139,7 +139,7 @@ if(isset($_COOKIE['note'])){
 }
 ?>
             </div>
-            <p>ONE THING A DAY KEEP PROBLEM AWAY</p>
+            <p>ONE THING A DAY KEEP THE PROBLEM AWAY</p>
             <!-- 背景圖片取自:https://lapeacefulday.com/ -->
         </div>
     </div>
