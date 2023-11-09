@@ -19,8 +19,14 @@ if(isset($_GET['month'])){
     <link rel="stylesheet" href="./css/style.css">
 
 </head>
+<style>
+.containerBox::before {
+    background-image: url(./img/bg10.jpg);
+}
+</style>
+
 <body>
-<?php
+    <?php
     // 變數
     $row=$_SESSION['row'];
     $FC=$_SESSION['PreMDt'];
@@ -118,7 +124,7 @@ if(isset($_GET['month'])){
         </div>
         <!-- 加入記事 -->
         <div class="notes" style="background-image:url('./img/bg<?=$_GET['month']?>.jpg');background-size:20%;">
-             <div class="containerNote">
+            <div class="containerNote">
                 <!-- 長駐 -->
                 <form action="calendar.php?noteD=<?=$_COOKIE['noteD']?>&month=<?=$month?>&year=<?=$year?>"
                     method="post">
@@ -143,8 +149,8 @@ if(isset($_COOKIE['note'])){
             <!-- 背景圖片取自:https://lapeacefulday.com/ -->
         </div>
     </div>
-        <!-- 加入記事end -->
-        <!-- 整個版面結尾 -->
+    <!-- 加入記事end -->
+    <!-- 整個版面結尾 -->
     </div>
 
 </body>
