@@ -1,5 +1,5 @@
 <?php
-include('./files/program.php');
+include('./calendar-files/program.php');
 // 秒數更新;需改用js實現(11/04記)
 // header("Refresh:60");
     // 變數
@@ -18,14 +18,16 @@ if(isset($_GET['month'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>☼CALENDAR</title>
     <!-- external -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <!-- external_end -->
     <link rel="icon" href="./img/logo.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="./css/style.css">
-
+    <!-- <link rel="stylesheet" href="./calendar-css/style.css"> -->
 </head>
-
+<?php
+include('./calendar-files/style.php');
+?>
 <body>
     <div class="container-fliud">
         <!-- 整個版面開始 -->
@@ -34,90 +36,9 @@ if(isset($_GET['month'])){
             <div class="col myleft">
             <?php
              echo $_SESSION['season'];
+             include('./calendar-files/myleft-header.php');
+             include('./calendar-files/myleft-calendar.php');
              ?>
-             <div class="container-fliud">
-                <div class="row align-items-center w-75 m-auto">
-                    <!-- <div class="col-12 col-sm-6 row align-items-center"> -->
-                        <div class="Emonth mytext-c1 col-6 text-start"><?=$Emonth?></div>
-                    <!-- </div> -->
-                    <div class="col-6 text-end">
-                        <button><a class="text-dark" href="calendar.php?prev=<?=$month?>&year=<?=$year?>">PREV</a></button>
-                        <button><a class="text-dark" href="calendar.php">||</a></button>
-                        <button><a class="text-dark" href="calendar.php?next=<?=$month?>&year=<?=$year?>">NEXT</a></button>
-                    </div>
-                    <div class="year mytext-c1 col-12 text-start"><?=$year?></div>
-                    <div class="col-6 text-start">
-                <!-- 加入選擇日期功能 -->
-                            <form action="calendar.php" method="post">
-                                <input type="text" name="year" id="year" onkeyup="value=value.replace(/^(0+)|[^\d]+/g,'')">
-                                 <select name="month" id="month">
-                                <?php
-                                        for($i=0;$i<12;$i++){ 
-                                            if($i+1==$month){
-                                                echo "<option value=".($i+1)." selected>".$_SESSION['monthS'][$i]."</option>";
-                                            } 
-                                            else{                                         
-                                            echo "<option value=".($i+1).">".$_SESSION['monthS'][$i]."</option>";
-                                        } 
-                                        }
-                                    ?>
-                                </select>
-                                <input class="submitB" type="submit" value="⁞⁞⁞">
-                            </form>
-                <!-- 加入選擇日期功能end -->
-                    </div>
-                    <div class="col-6 text-end time mytext-c1"><?=date("A h:i")?></div>
-                </div>
-             </div>
-            <div class='containerBoxS'>
-                <div class='every everyW'>
-                    <?php  
-    foreach($_SESSION['week'] as $key => $w){
-        if($key==0 || $key==6){
-            echo "<span class='bg-c3'>".$w."</span>";
-        }
-        else{
-            echo "<span class='bg-c3'>".$w."</span>";
-        }
-    }
-    ?>
-                </div>
-            </div>
-            <div class="containerBoxS">
-                <?php
-    for($j=0;$j < $row; $j++){
-        echo "<div class='every everyD'>";
-        for($i=0;$i<7;$i++){
-            $tmp=(7*$j)+$i;
-            $everydayTime=strtotime("$tmp days",$FC);
-            $everydayM=date("m",$everydayTime);
-            $everyday=date("d",$everydayTime);
-            $every=date("Y-m-d",$everydayTime);
-            if($every==date("Y-m-d")){
-                ?>
-                <a class="text-dark" href="calendar.php?month=<?=$month?>&year=<?=$year?>&noteD=<?=$everydayTime?>">
-                    <span class='today-c1'><?=$everyday?></span>
-                </a>
-                <?php               
-            }
-            elseif($everydayM==$month){
-                ?>
-                <a class="text-dark" href="calendar.php?month=<?=$month?>&year=<?=$year?>&noteD=<?=$everydayTime?>">
-                    <span class='mybg-c1 myday'><?=$everyday?></span>
-                </a>
-                <?php
-            }
-    
-            else{
-                    echo "<a><span class='bg-c3'>";
-                    echo "&nbsp&nbsp;&nbsp&nbsp;</span></a>";
-            }
-    
-        }
-        echo "</div>";
-    }
-    ?>
-            </div>
         </div>
         <!-- 加入記事 -->
         <!-- 長駐 -->

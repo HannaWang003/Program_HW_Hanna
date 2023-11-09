@@ -1,18 +1,10 @@
-* {
+<style>
+    * {
   box-sizing: border-box;
   margin: 0;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   text-decoration: none;
 }
-.container {
-  margin: auto;
-  background-color: black;
-  width: 100vw;
-  height: 100vh;
-  position: relative;
-  display: flex;
-}
-
 .myleft {
   height:100%;
   background-color: rgb(32, 166, 178);
@@ -29,18 +21,18 @@
   position: absolute;
   top: 0;
   left: 0;
-  background-image: url(../img/bg8.jpg);
+  background-image: url("./img/bg<?=$month?>.jpg");
   opacity: 0.1;
   box-shadow: inset -2.5vw 0px 1.8vw rgb(79, 79, 79);
   pointer-events:none;
 }
-.time {
+.myfs-vh4 {
   font-size: 4vh;
 }
-.Emonth {
+.myfs-vh8 {
   font-size: 8vh;
 }
-.year {
+.myfs-vh3 {
   font-size: 3vh;
 }
 .myleft form option{
@@ -62,19 +54,30 @@
   border: 0;
 }
 .myleft select {
-  width: 22%;
+  width: 40%;
   height: 4vh;
   font-size: 1vw;
   background-color: rgba(196, 196, 196, 0.5);
 }
-.myleft button {
+.myLheader-col-2 button {
   background-color: rgba(196, 196, 196, 0.5);
-  border: 0;
-  font-size: 0.8vw;
+  /* border: 0; */
+  font-size: 1vw;
   padding: 0.5vw 1vw;
 }
-.containerBoxS {
-  margin-top: 2vh;
+.myLheader-col-4 button{
+font-size:1vw;
+border:0;
+}
+.myLheader-col-4 button:hover{
+box-shadow:0 0 5px #fff;
+background-color:transparent;
+}
+.myLheader-col-4 button i{
+color:#888;
+}
+.myLheader-col-4 button i:hover{
+color:#fff;
 }
 .every span {
   display: inline-block;
@@ -103,7 +106,7 @@
   cursor: cell;
 }
 
-.today-c1 {
+.mytoday-c1 {
   box-shadow: inset 0 0 30px rgb(0, 0, 0);
   color: white;
 }
@@ -116,7 +119,7 @@
 .mybg-c1 {
   background-color: lightgoldenrodyellow;
 }
-.bg-c3 {
+.mybg-c3 {
   background-color: rgba(215, 214, 214, 0.358);
 }
 /* 加入記事 */
@@ -186,3 +189,5 @@ color:lightgoldenrodyellow;
 }
 
 /* 加入記事end */
+
+</style>
