@@ -36,17 +36,17 @@ if(isset($_GET['month'])){
              echo $_SESSION['season'];
              ?>
              <div class="container-fliud">
-                <div class="row">
-                    <div class="col-12 col-sm-6">
-                        <div class="Emonth text-c1"><?=$Emonth?></div>
-                        <div class="year text-c1"><?=$year?></div>
+                <div class="row align-items-center w-75 m-auto">
+                    <!-- <div class="col-12 col-sm-6 row align-items-center"> -->
+                        <div class="Emonth mytext-c1 col-6 text-start"><?=$Emonth?></div>
+                    <!-- </div> -->
+                    <div class="col-6 text-end">
+                        <button><a class="text-dark" href="calendar.php?prev=<?=$month?>&year=<?=$year?>">PREV</a></button>
+                        <button><a class="text-dark" href="calendar.php">||</a></button>
+                        <button><a class="text-dark" href="calendar.php?next=<?=$month?>&year=<?=$year?>">NEXT</a></button>
                     </div>
-                    <div class="col-12 col-sm-6">
-                        <button><a class="text-bk" href="calendar.php?prev=<?=$month?>&year=<?=$year?>">PREV</a></button>
-                        <button><a class="text-bk" href="calendar.php">||</a></button>
-                        <button><a class="text-bk" href="calendar.php?next=<?=$month?>&year=<?=$year?>">NEXT</a></button>
-                    </div>
-                    <div class="col-12 col-sm-6">
+                    <div class="year mytext-c1 col-12 text-start"><?=$year?></div>
+                    <div class="col-6 text-start">
                 <!-- 加入選擇日期功能 -->
                             <form action="calendar.php" method="post">
                                 <input type="text" name="year" id="year" onkeyup="value=value.replace(/^(0+)|[^\d]+/g,'')">
@@ -66,7 +66,7 @@ if(isset($_GET['month'])){
                             </form>
                 <!-- 加入選擇日期功能end -->
                     </div>
-                    <div class="col-12 col-sm-6 time text-c1"><?=date("A h:i")?></div>
+                    <div class="col-6 text-end time mytext-c1"><?=date("A h:i")?></div>
                 </div>
              </div>
             <div class='containerBoxS'>
@@ -95,15 +95,15 @@ if(isset($_GET['month'])){
             $every=date("Y-m-d",$everydayTime);
             if($every==date("Y-m-d")){
                 ?>
-                <a class="text-bk" href="calendar.php?month=<?=$month?>&year=<?=$year?>&noteD=<?=$everydayTime?>">
+                <a class="text-dark" href="calendar.php?month=<?=$month?>&year=<?=$year?>&noteD=<?=$everydayTime?>">
                     <span class='today-c1'><?=$everyday?></span>
                 </a>
                 <?php               
             }
             elseif($everydayM==$month){
                 ?>
-                <a class="text-bk" href="calendar.php?month=<?=$month?>&year=<?=$year?>&noteD=<?=$everydayTime?>">
-                    <span class='bg-c2'><?=$everyday?></span>
+                <a class="text-dark" href="calendar.php?month=<?=$month?>&year=<?=$year?>&noteD=<?=$everydayTime?>">
+                    <span class='mybg-c1 myday'><?=$everyday?></span>
                 </a>
                 <?php
             }
