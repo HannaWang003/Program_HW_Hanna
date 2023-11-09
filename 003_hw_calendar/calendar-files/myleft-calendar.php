@@ -1,21 +1,23 @@
-<div class='container-fliud mt-3'>
-                <div class='every'>
+<div class='container w-75 mt-3'>
+                <div class='row'>
                     <?php  
     foreach($_SESSION['week'] as $key => $w){
         if($key==0 || $key==6){
-            echo "<span class='mybg-c3'>".$w."</span>";
+            echo "<div class='col p-0 m-0'><span class='myevery mybg-c3'>".$w."</span></div>";
         }
         else{
-            echo "<span class='mybg-c3'>".$w."</span>";
+            echo "<div class='col p-0 m-0'><span class='myevery mybg-c3'>".$w."</span></div>";
         }
     }
     ?>
                 </div>
+
+                <!-- 分隔線 -->
             </div>
-            <div class="container-fliud">
+            <div class="container w-75">
                 <?php
     for($j=0;$j < $row; $j++){
-        echo "<div class='every everyD'>";
+        echo "<div class='row'>";
         for($i=0;$i<7;$i++){
             $tmp=(7*$j)+$i;
             $everydayTime=strtotime("$tmp days",$FC);
@@ -24,22 +26,24 @@
             $every=date("Y-m-d",$everydayTime);
             if($every==date("Y-m-d")){
                 ?>
-                <a class="text-dark" href="calendar.php?month=<?=$month?>&year=<?=$year?>&noteD=<?=$everydayTime?>">
-                    <span class='mytoday-c1'><?=$everyday?></span>
+                <div class="col p-0 m-0"><a class="text-dark" href="calendar.php?month=<?=$month?>&year=<?=$year?>&noteD=<?=$everydayTime?>">
+                    <span class='myevery mytoday-c1'><?=$everyday?></span>
                 </a>
+                </div>
                 <?php               
             }
             elseif($everydayM==$month){
                 ?>
-                <a class="text-dark" href="calendar.php?month=<?=$month?>&year=<?=$year?>&noteD=<?=$everydayTime?>">
-                    <span class='mybg-c1 myday'><?=$everyday?></span>
+                <div class="col p-0 m-0"><a class="text-dark" href="calendar.php?month=<?=$month?>&year=<?=$year?>&noteD=<?=$everydayTime?>">
+                    <span class='myevery mybg-c1 myday'><?=$everyday?></span>
                 </a>
+                </div>
                 <?php
             }
     
             else{
-                    echo "<a><span class='mybg-c3'>";
-                    echo "&nbsp&nbsp;&nbsp&nbsp;</span></a>";
+                    echo "<div class='col p-0 m-0'><a><span class='myevery mybg-c3'>";
+                    echo "&nbsp&nbsp;&nbsp&nbsp;</span></a></div>";
             }
     
         }

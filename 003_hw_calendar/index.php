@@ -33,7 +33,7 @@ include('./calendar-files/style.php');
         <!-- 整個版面開始 -->
 
         <div class="row">
-            <div class="col myleft vh-100">
+            <div class="col myleft">
             <?php
              include('./calendar-files/myleft-header.php');
              include('./calendar-files/myleft-calendar.php');

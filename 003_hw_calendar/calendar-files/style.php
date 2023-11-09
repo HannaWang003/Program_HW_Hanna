@@ -80,20 +80,14 @@ color:#888;
 .myLheader-col-4 button i:hover{
 color:#fff;
 }
-.every span {
+.myevery{
+  font-size:1.5vw;
   display: inline-block;
   width: 5vw;
-  height: 5vw;
   border-radius: 50%;
   line-height: 5vw;
   -webkit-backdrop-filter: blur(80px);
   backdrop-filter: blur(80px);
-}
-.everyD {
-  width: 70%;
-  margin: auto;
-  justify-content: space-around;
-  display: flex;
 }
 .myday:hover {
   background-color: transparent;
