@@ -33,12 +33,12 @@
   opacity: 0.1;
   box-shadow: inset -2.5vw 0px 1.8vw rgb(79, 79, 79);
 }
-.BoxHeader {
+/* .BoxHeader {
   position: relative;
   height: 13vh;
   width: 100%;
   padding: 0 8vw;
-}
+} */
 .time {
   position: absolute;
   bottom: 0;
@@ -54,21 +54,21 @@
   bottom: 0;
   font-size: 3vh;
 }
-.BHButton {
+/* .BHButton {
   position: absolute;
   right: 8vw;
   top: 2vh;
-}
-.DateSelect {
+} */
+/* .DateSelect {
   width: 100%;
   text-align: start;
   padding-left: 8vw;
   position: relative;
-}
-.DateSelect form {
+} */
+/* .DateSelect form {
   width: 80%;
-}
-.DateSelect form option{
+} */
+.myleft form option{
   text-align:center;
 }
 .submitB {
@@ -79,20 +79,20 @@
 .submitB:hover {
   cursor: pointer;
 }
-.DateSelect input:nth-child(1) {
+.myleft input:nth-child(1) {
   width: 20%;
   height: 4vh;
   font-size: 1vw;
   background-color: rgba(196, 196, 196, 0.5);
   border: 0;
 }
-.DateSelect select {
+.myleft select {
   width: 22%;
   height: 4vh;
   font-size: 1vw;
   background-color: rgba(196, 196, 196, 0.5);
 }
-.BHButton button {
+.myleft button {
   background-color: rgba(196, 196, 196, 0.5);
   border: 0;
   font-size: 0.8vw;

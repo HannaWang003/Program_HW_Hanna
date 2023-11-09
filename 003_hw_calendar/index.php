@@ -35,23 +35,23 @@ if(isset($_GET['month'])){
             <?php
              echo $_SESSION['season'];
              ?>
-            <div class="BoxHeader">
-                <div class="Emonth text-c1"><?=$Emonth?></div>
-
-                <div class="year text-c1"><?=$year?></div>
-                <div class="time text-c1"><?=date("A h:i")?></div>
-                <div class="BHButton">
-                    <button><a class="text-bk" href="calendar.php?prev=<?=$month?>&year=<?=$year?>">PREV</a></button>
-                    <button><a class="text-bk" href="calendar.php">||</a></button>
-                    <button><a class="text-bk" href="calendar.php?next=<?=$month?>&year=<?=$year?>">NEXT</a></button>
-                </div>
-            </div>
-            <div class=DateSelect>
+             <div class="container-fliud">
+                <div class="row">
+                    <div class="col">
+                        <div class="Emonth text-c1"><?=$Emonth?></div>
+                        <div class="year text-c1"><?=$year?></div>
+                    </div>
+                    <div class="col">
+                        <button><a class="text-bk" href="calendar.php?prev=<?=$month?>&year=<?=$year?>">PREV</a></button>
+                        <button><a class="text-bk" href="calendar.php">||</a></button>
+                        <button><a class="text-bk" href="calendar.php?next=<?=$month?>&year=<?=$year?>">NEXT</a></button>
+                    </div>
+                    <div class="col">
                 <!-- 加入選擇日期功能 -->
-                <form action="calendar.php" method="post">
-                    <input type="text" name="year" id="year" onkeyup="value=value.replace(/^(0+)|[^\d]+/g,'')">
-                    <select name="month" id="month">
-                        <?php
+                            <form action="calendar.php" method="post">
+                                <input type="text" name="year" id="year" onkeyup="value=value.replace(/^(0+)|[^\d]+/g,'')">
+                                 <select name="month" id="month">
+                                <?php
                                         for($i=0;$i<12;$i++){ 
                                             if($i+1==$month){
                                                 echo "<option value=".($i+1)." selected>".$_SESSION['monthS'][$i]."</option>";
@@ -61,11 +61,14 @@ if(isset($_GET['month'])){
                                         } 
                                         }
                                     ?>
-                    </select>
-                    <input class="submitB" type="submit" value="⁞⁞⁞">
-                </form>
+                                </select>
+                                <input class="submitB" type="submit" value="⁞⁞⁞">
+                            </form>
                 <!-- 加入選擇日期功能end -->
-            </div>
+                    </div>
+                    <div class="col time text-c1"><?=date("A h:i")?></div>
+                </div>
+             </div>
             <div class='containerBoxS'>
                 <div class='every everyW'>
                     <?php  
