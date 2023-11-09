@@ -37,16 +37,16 @@ if(isset($_GET['month'])){
              ?>
              <div class="container-fliud">
                 <div class="row">
-                    <div class="col">
+                    <div class="col-12 col-sm-6">
                         <div class="Emonth text-c1"><?=$Emonth?></div>
                         <div class="year text-c1"><?=$year?></div>
                     </div>
-                    <div class="col">
+                    <div class="col-12 col-sm-6">
                         <button><a class="text-bk" href="calendar.php?prev=<?=$month?>&year=<?=$year?>">PREV</a></button>
                         <button><a class="text-bk" href="calendar.php">||</a></button>
                         <button><a class="text-bk" href="calendar.php?next=<?=$month?>&year=<?=$year?>">NEXT</a></button>
                     </div>
-                    <div class="col">
+                    <div class="col-12 col-sm-6">
                 <!-- 加入選擇日期功能 -->
                             <form action="calendar.php" method="post">
                                 <input type="text" name="year" id="year" onkeyup="value=value.replace(/^(0+)|[^\d]+/g,'')">
@@ -66,7 +66,7 @@ if(isset($_GET['month'])){
                             </form>
                 <!-- 加入選擇日期功能end -->
                     </div>
-                    <div class="col time text-c1"><?=date("A h:i")?></div>
+                    <div class="col-12 col-sm-6 time text-c1"><?=date("A h:i")?></div>
                 </div>
              </div>
             <div class='containerBoxS'>

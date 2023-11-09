@@ -29,45 +29,20 @@
   position: absolute;
   top: 0;
   left: 0;
-  background-image: url(./img/bg06.jpg);
+  background-image: url(../img/bg8.jpg);
   opacity: 0.1;
   box-shadow: inset -2.5vw 0px 1.8vw rgb(79, 79, 79);
+  pointer-events:none;
 }
-/* .BoxHeader {
-  position: relative;
-  height: 13vh;
-  width: 100%;
-  padding: 0 8vw;
-} */
 .time {
-  position: absolute;
-  bottom: 0;
   font-size: 4vh;
-  right: 8vw;
 }
 .Emonth {
-  position: absolute;
   font-size: 8vh;
 }
 .year {
-  position: absolute;
-  bottom: 0;
   font-size: 3vh;
 }
-/* .BHButton {
-  position: absolute;
-  right: 8vw;
-  top: 2vh;
-} */
-/* .DateSelect {
-  width: 100%;
-  text-align: start;
-  padding-left: 8vw;
-  position: relative;
-} */
-/* .DateSelect form {
-  width: 80%;
-} */
 .myleft form option{
   text-align:center;
 }
