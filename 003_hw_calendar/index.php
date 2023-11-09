@@ -19,11 +19,6 @@ if(isset($_GET['month'])){
     <link rel="stylesheet" href="./css/style.css">
 
 </head>
-<style>
-.containerBox::before {
-    background-image: url(./img/bg10.jpg);
-}
-</style>
 
 <body>
     <?php
