@@ -1,11 +1,13 @@
 <?php
 include('./files/program.php');
-?>
-<?php 
 // 秒數更新;需改用js實現(11/04記)
 // header("Refresh:60");
-?>
-<?php
+    // 變數
+    $row=$_SESSION['row'];
+    $FC=$_SESSION['PreMDt'];
+    $month=$_SESSION['month'];
+    $Emonth=$_SESSION['Emonth'];
+    $year=$_SESSION['year'];
 if(isset($_GET['month'])){
 ?>
 <!DOCTYPE html>
@@ -15,24 +17,21 @@ if(isset($_GET['month'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>☼CALENDAR</title>
+    <!-- external -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <!-- external_end -->
     <link rel="icon" href="./img/logo.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./css/style.css">
 
 </head>
 
 <body>
-    <?php
-    // 變數
-    $row=$_SESSION['row'];
-    $FC=$_SESSION['PreMDt'];
-    $month=$_SESSION['month'];
-    $Emonth=$_SESSION['Emonth'];
-    $year=$_SESSION['year'];
-    ?>
-
-    <div class="container">
+    <div class="container-fliud">
         <!-- 整個版面開始 -->
-        <div class="containerBox">
+
+        <div class="row">
+            <div class="col myleft">
             <?php
              echo $_SESSION['season'];
              ?>
@@ -107,8 +106,8 @@ if(isset($_GET['month'])){
             }
     
             else{
-                    echo "<span class='bg-c3'>";
-                    echo "&nbsp&nbsp;&nbsp&nbsp;</span>";
+                    echo "<a><span class='bg-c3'>";
+                    echo "&nbsp&nbsp;&nbsp&nbsp;</span></a>";
             }
     
         }
@@ -119,7 +118,7 @@ if(isset($_GET['month'])){
         </div>
         <!-- 加入記事 -->
         <!-- 長駐 -->
-        <div class="notes" style="background-image:url('./img/bg<?=$_GET['month']?>.jpg');background-size:20%;">
+        <div class="col notes" style="background-image:url('./img/bg<?=$_GET['month']?>.jpg');background-size:20%;">
             <div class="containerNote">
                 <!-- 長駐 -->
                 <form action="calendar.php?noteD=<?=$_COOKIE['noteD']?>&month=<?=$month?>&year=<?=$year?>"
@@ -128,8 +127,7 @@ if(isset($_GET['month'])){
                     <input type="submit" value="OK">
                 </form>
             </div>
-                <!-- 長駐end -->
-                <div class="containerNote">                
+                <!-- 長駐end -->              
                 <?php
 if(isset($_COOKIE['note'])){
     foreach($_COOKIE['note'] as $key => $val){
@@ -146,6 +144,7 @@ if(isset($_COOKIE['note'])){
     </div>
     <!-- 加入記事end -->
     <!-- 整個版面結尾 -->
+    </div>
     </div>
 
 </body>
