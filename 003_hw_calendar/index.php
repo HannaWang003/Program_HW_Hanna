@@ -33,42 +33,20 @@ include('./calendar-files/style.php');
         <!-- 整個版面開始 -->
 
         <div class="row">
-            <div class="col myleft">
+            <div class="col myleft vh-100">
             <?php
-             echo $_SESSION['season'];
              include('./calendar-files/myleft-header.php');
              include('./calendar-files/myleft-calendar.php');
              ?>
-        </div>
-        <!-- 加入記事 -->
-        <!-- 長駐 -->
-        <div class="col notes" style="background-image:url('./img/bg<?=$_GET['month']?>.jpg');background-size:20%;">
-            <div class="containerNote">
-                <!-- 長駐 -->
-                <form action="calendar.php?noteD=<?=$_COOKIE['noteD']?>&month=<?=$month?>&year=<?=$year?>"
-                    method="post">
-                    <input type="text" name="note" id="note">
-                    <input type="submit" value="OK">
-                </form>
             </div>
-                <!-- 長駐end -->              
+            <div class="col myright">
                 <?php
-if(isset($_COOKIE['note'])){
-    foreach($_COOKIE['note'] as $key => $val){
-        intval($key);
-        echo date("Y-m-d",$key)."&nbsp;&nbsp;-&nbsp;&nbsp;".$val;
-        echo "<br>";
-    }
-}
-?>
+                include('./calendar-files/myright-note.php');
+                ?>
+            
             </div>
-            <p>ONE THING A DAY KEEP THE PROBLEM AWAY</p>
-            <!-- 背景圖片取自:https://lapeacefulday.com/ -->
         </div>
-    </div>
-    <!-- 加入記事end -->
     <!-- 整個版面結尾 -->
-    </div>
     </div>
 
 </body>

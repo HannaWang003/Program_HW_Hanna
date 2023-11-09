@@ -3,15 +3,15 @@
   box-sizing: border-box;
   margin: 0;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  text-decoration: none;
-}
+  text-decoration: none;}
 .myleft {
-  height:100%;
+  height:100vh;
   background-color: rgb(32, 166, 178);
   text-align: center;
   padding-bottom: 5vh;
   box-shadow: inset -2.5vw 0px 1.8vw rgb(79, 79, 79);
   position: relative;
+  background-attachment:fixed;
 }
 .myleft::before {
   content: "";
@@ -22,6 +22,7 @@
   top: 0;
   left: 0;
   background-image: url("./img/bg<?=$month?>.jpg");
+  background-attachment:fixed;
   opacity: 0.1;
   box-shadow: inset -2.5vw 0px 1.8vw rgb(79, 79, 79);
   pointer-events:none;
@@ -83,7 +84,7 @@ color:#fff;
   display: inline-block;
   width: 5vw;
   height: 5vw;
-  border-radius: 50px;
+  border-radius: 50%;
   line-height: 5vw;
   -webkit-backdrop-filter: blur(80px);
   backdrop-filter: blur(80px);
@@ -123,7 +124,9 @@ color:#fff;
   background-color: rgba(215, 214, 214, 0.358);
 }
 /* 加入記事 */
-.notes {
+.myright {
+  background-image:url("./img/bg<?=$_GET['month']?>.jpg");
+  background-size:15%;
   padding: 2vw;
   background-repeat: repeat;
   background-size: 10%;
@@ -133,7 +136,7 @@ color:#fff;
   justify-content: space-evenly;
   box-shadow: inset 6vw 0 5.5vw rgb(0, 0, 0);
 }
-.notes > p {
+.myright > p {
   font-size: 1vw;
   color: white;
   text-decoration: overline;
@@ -162,7 +165,7 @@ color:#fff;
   top:50%;
   left:50%;
   transform:translate(-50%,-50%);
-  box-shadow:0 0 20px rgb(0, 0, 0)
+  box-shadow:0 0 20px rgb(0, 0, 0);
 }
 .notes_header h2{
   position:relative;
