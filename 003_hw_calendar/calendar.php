@@ -7,17 +7,19 @@ unset($_SESSION['Emonth']);
 unset($_SESSION['year']);
 unset($_SESSION['week']);
 unset($_SESSION['monthS']);
-// if($_GET['month'] && $_GET['year']){
-//   $_SESSION['month']=$_GET['month'];
-//   $_SESSION['year']=$_GET['year'];
-// }
+setcookie("note[".$_GET['Ddate']."]",$_GET['Dnote'],time());
+
 // 存入12個月
 for($i=1;$i<=12;$i++){
   $monthS=strtotime("2023-$i-1");
   $_SESSION['monthS'][]=date('F',$monthS);
 }
+if($_GET['month'] && $_GET['year']){
+  $_SESSION['month']=$_GET['month'];
+  $_SESSION['year']=$_GET['year'];
+}
 // 開始設定月曆
-if(isset($_POST['year']) && !empty($_POST['year'])){
+elseif(isset($_POST['year']) && !empty($_POST['year'])){
   $_SESSION['month']=$_POST['month'];
   $_SESSION['year']=$_POST['year'];
 }
@@ -99,8 +101,8 @@ break;
 case $month<=12 && $month>=2:
   $_SESSION['season']='season-4';
 break;
-  
- 
+   
 }
+
 header("location:index.php?month=$month");
 ?>

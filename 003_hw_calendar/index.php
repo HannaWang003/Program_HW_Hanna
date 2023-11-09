@@ -34,23 +34,20 @@ include('./calendar-files/style.php');
 
         <div class="row">
             <div class="col myleft">
-            <?php
-             include('./calendar-files/myleft-header.php');
-             include('./calendar-files/myleft-calendar.php');
+             <?php
+              include('./calendar-files/myleft-header.php');
+              include('./calendar-files/myleft-calendar.php');
              ?>
             </div>
             <div class="col myright">
-                <?php
-                include('./calendar-files/myright-note.php');
-                ?>
-            
+             <?php
+              include('./calendar-files/myright-note.php');
+             ?>            
             </div>
         </div>
     <!-- 整個版面結尾 -->
     </div>
-
 </body>
-
 </html>
 <?php
 }

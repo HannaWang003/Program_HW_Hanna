@@ -5,7 +5,6 @@
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   text-decoration: none;}
 .myleft {
-  height:100vh;
   background-color: rgb(32, 166, 178);
   text-align: center;
   padding-bottom: 5vh;
@@ -38,14 +37,6 @@
 }
 .myleft form option{
   text-align:center;
-}
-.submitB {
-  background-color: transparent;
-  border: 0;
-  font-size: 1.5vw;
-}
-.submitB:hover {
-  cursor: pointer;
 }
 .myleft input:nth-child(1) {
   width: 20%;
@@ -81,7 +72,7 @@ color:#888;
 color:#fff;
 }
 .myevery{
-  font-size:1.5vw;
+  font-size:1vw;
   display: inline-block;
   width: 5vw;
   border-radius: 50%;
