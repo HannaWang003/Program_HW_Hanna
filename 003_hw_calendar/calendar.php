@@ -8,6 +8,7 @@ unset($_SESSION['year']);
 unset($_SESSION['week']);
 unset($_SESSION['monthS']);
 setcookie("note[".$_GET['Ddate']."]",$_GET['Dnote'],time());
+setcookie("dateN[".$_GET['Ddate']."]",$_GET['Ddate'],time());
 
 // 存入12個月
 for($i=1;$i<=12;$i++){

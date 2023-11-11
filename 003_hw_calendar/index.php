@@ -32,14 +32,14 @@ include('./calendar-files/style.php');
     <div class="container-fliud">
         <!-- 整個版面開始 -->
 
-        <div class="row">
-            <div class="col myleft">
+        <div class="row m-0 vh-100">
+            <div class="col-12 col-lg-6 myleft">
              <?php
               include('./calendar-files/myleft-header.php');
               include('./calendar-files/myleft-calendar.php');
              ?>
             </div>
-            <div class="col myright">
+            <div class="col-12 col-lg-6 myright">
              <?php
               include('./calendar-files/myright-note.php');
              ?>            

@@ -4,11 +4,14 @@
   margin: 0;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   text-decoration: none;}
+  a{
+    color:black;
+  }
 .myleft {
   background-color: rgb(32, 166, 178);
   text-align: center;
   padding-bottom: 5vh;
-  box-shadow: inset -2.5vw 0px 1.8vw rgb(79, 79, 79);
+  box-shadow: inset -2.5vw 0 1.8vw rgb(79, 79, 79);
   position: relative;
   background-attachment:fixed;
 }
@@ -26,8 +29,20 @@
   box-shadow: inset -2.5vw 0px 1.8vw rgb(79, 79, 79);
   pointer-events:none;
 }
+.myw-30{
+  width:30%;
+}
+.myfs-1vh{
+font-size: 2vh;
+}
+.myfs-vh3 {
+  font-size: 3vh;
+}
 .myfs-vh4 {
   font-size: 4vh;
+}
+.myfs-vh5 {
+  font-size: 5vh;
 }
 .myfs-vh8 {
   font-size: 8vh;
@@ -54,15 +69,21 @@
 .myLheader-col-2 button {
   background-color: rgba(196, 196, 196, 0.5);
   /* border: 0; */
-  font-size: 1vw;
-  padding: 0.5vw 1vw;
+  font-size: 2vh;
+}
+.myLheader-col-4 input[type='text']{
+  font-size:2vh;
+}
+.myLheader-col-4 select{
+  font-size:2vh;
 }
 .myLheader-col-4 button{
-font-size:1vw;
+  width:10vh;
+font-size:2vh;
 border:0;
 }
 .myLheader-col-4 button:hover{
-box-shadow:0 0 5px #fff;
+box-shadow:inset 0 0 5px #fff;
 background-color:transparent;
 }
 .myLheader-col-4 button i{
@@ -83,13 +104,17 @@ color:#fff;
 .myday:hover {
   background-color: transparent;
   background-image: radial-gradient(
-    rgba(215, 214, 214, 0.358) 30%,
-    transparent 50%,
-    rgb(0, 0, 0) 80%
+    rgba(215, 214, 214, 0.358) 20%,
+    transparent 30%,
+    rgb(255, 255, 255) 80%
   );
   color: lightgoldenrodyellow;
-  transition-duration: 0.5s;
-  cursor: cell;
+  transition-duration: 0.3s;
+}
+.mynotedD{
+  color:white;
+  background-color: rgb(195, 41, 41);
+  text-shadow:5px 5px 2px rgba(0, 0, 0, 0.66);
 }
 
 .mytoday-c1 {
@@ -118,22 +143,17 @@ color:#fff;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
   box-shadow: inset 6vw 0 5.5vw rgb(0, 0, 0);
 }
-.myright > p {
-  font-size: 1vw;
-  color: white;
-  text-decoration: overline;
-}
+
 .containerNote {
   position: relative;
   width: 80%;
-  height: 60%;
-  backdrop-filter: blur(5px);
-  padding: 1vw 2vw;
-  border: 1px solid black;
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+  padding: 4vh;
   color: white;
+  box-shadow:inset 0 0 10px white;
 }
 .notes_header{
   position:relative;
