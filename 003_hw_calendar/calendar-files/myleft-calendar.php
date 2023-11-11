@@ -1,13 +1,19 @@
 <div class='container w-75 mt-3'>
                 <div class='row'>
                     <?php  
+$num=count($_SESSION['week']);
     foreach($_SESSION['week'] as $key => $w){
-        if($key==0 || $key==6){
-            echo "<div class='col p-0 m-0'><span class='myevery mybg-c3'>".$w."</span></div>";
+        if($key>3){
+$color=($num-1-$key)*34;
         }
         else{
-            echo "<div class='col p-0 m-0'><span class='myevery mybg-c3'>".$w."</span></div>";
+           $color=$key*34; 
         }
+        
+
+   
+            echo "<div class='col p-0 m-0'><span class='myevery' style='background-color:rgb($color,$color,$color,0.5)'>".$w."</span></div>";
+
     }
     ?>
                 </div>
@@ -41,9 +47,20 @@
                 <?php                
             }
             elseif($everydayM==$month){
+                if($i>3){
+                    $color=100-(6-$i)*34;
+                            }
+                            else{
+                               $color=100-$i*34; 
+                            }
                 ?>
                 <div class="col p-0 m-0"><a class="text-dark" href="calendar.php?month=<?=$month?>&year=<?=$year?>&noteD=<?=$everydayTime?>">
-                    <span class='myevery mybg-c1 myday'><?=$everyday?></span>
+                    <!-- <span class='myevery mybg-c1 myday'><?=$everyday?></span> -->
+                   <?php
+echo "<span class='myevery myday' style='background-color:rgb($color,$color,$color)'>$everyday</span>"
+                   ?>
+                    
+
                 </a>
                 </div>
                 <?php

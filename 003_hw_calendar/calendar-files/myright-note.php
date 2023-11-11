@@ -10,14 +10,14 @@
                             echo "<div class='myfs-vh4 col-12 text-end text-sm-start col-sm-8'>Today&nbsp;‣&nbsp;".date('Y-m-d')."</div>";
                         }
             ?>
-            <div class="col-12 col-sm-4 myfs-vh3 mytext-c1 d-flex align-items-center justify-content-end"><?=date("A h:i:s")?></div>
+            <div class="col-12 col-sm-4 myfs-vh3 d-flex align-items-center justify-content-end"><?=date("A h:i:s")?></div>
             </div>
                 <form action="calendar.php?noteD=<?=$_COOKIE['noteD']?>&month=<?=$month?>&year=<?=$year?>"
                     method="post">
                     <div class="input-group mb-3">
     <input type="text" class="form-control" name="note" id="note" placeholder="One task at a time..">
-    <button class="btn btn-primary" type="submit">OK</button> 
-    <button class="btn btn-danger" type="reset">Cancel</button> 
+    <button class="btn border-dark myhover-1" type="submit">OK</button> 
+    <button class="btn border-dark myhover-1" type="reset">Cancel</button> 
   </div>
                 </form>
             </div> 
@@ -29,11 +29,15 @@ if(isset($_COOKIE['note'])){
     foreach($_COOKIE['note'] as $key => $val){
         intval($key);
         ?>
-       <div class="card col-3 myw-30 m-1">
-            <div class="card-header myfs-1vh"><?=date("Y-m-d",$key)?></div>
-            <div class="card-body"><?=$val?></div>
-            <div class="card-footer"><a href="calendar.php?month=<?=$month?>&year=<?=$year?>&Ddate=<?=$key?>&Dnote=<?=$val?>">delete</a></div>
+          <div class="toast show col-3 myw-30 m-1 mytext-c3 mybg-c4">
+    <div class="toast-header mybg-c4">
+      <strong class="me-auto"><?=date("Y-m-d",$key)?></strong>
+      <a class="mytext-c3" href="calendar.php?month=<?=$month?>&year=<?=$year?>&Ddate=<?=$key?>&Dnote=<?=$val?>"><button type="button" class="btn-close" data-bs-dismiss="toast"></button></a>
     </div>
+    <div class="toast-body">
+      <p><?=$val?></p>
+    </div>
+  </div>
         <?php
     }
 }
