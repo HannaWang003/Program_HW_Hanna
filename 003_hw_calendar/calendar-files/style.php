@@ -16,10 +16,12 @@ body::before{
   width:100%;
   height:100%;
   /* background-image:url('./img/bg<?=$_SESSION['month']?>.png'); */
+  background-image:url('./img/walkman.gif');
+  /* 動畫取自https://cn.phoneky.com/gif-animations/?id=s2s205275 */
   background-size:contain;
-  background-position: center center;
+  background-position: right center;
   background-repeat: no-repeat;
-  opacity: 0.3;
+  opacity: 0.1;
   position:absolute;
   top:0;
   left:0;
