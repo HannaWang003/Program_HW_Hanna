@@ -45,20 +45,7 @@ include('./calendar-files/style.php');
         </div>
     <!-- 整個版面結尾 -->
     </div>
-    <script>
-VANTA.TRUNK({
-  el: "#my-background",
-  mouseControls: true,
-  touchControls: true,
-  gyroControls: false,
-  minHeight: 200.00,
-  minWidth: 200.00,
-  scale: 1.00,
-  scaleMobile: 1.00,
-  chaos: 2.50
-})
-</script>
-</body>
+    </body>
 </html>
 <?php
 }

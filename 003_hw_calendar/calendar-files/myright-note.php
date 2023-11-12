@@ -23,13 +23,13 @@
             </div> 
 <!-- section_note -->
 <div class="container">
-    <div class="row w-75 m-auto justify-content-center">
+    <div class="row m-auto justify-content-center">
                 <?php
 if(isset($_COOKIE['note'])){
     foreach($_COOKIE['note'] as $key => $val){
         intval($key);
         ?>
-          <div class="toast show col-3 myw-30 m-1 mytext-c3 mybg-c4">
+          <div class="toast show col-12 col-sm-3 w-25 m-1 mytext-c3 mybg-c4">
     <div class="toast-header mybg-c4">
       <strong class="me-auto"><?=date("Y-m-d",$key)?></strong>
       <a class="mytext-c3" href="calendar.php?month=<?=$month?>&year=<?=$year?>&Ddate=<?=$key?>&Dnote=<?=$val?>"><i class="fa-solid fa-trash-can fa-bounce fa-xl" style="color:white"></i></a>

@@ -19,7 +19,8 @@ body::before{
   background-image:url('./img/walkman.gif');
   /* 動畫取自https://cn.phoneky.com/gif-animations/?id=s2s205275 */
   background-size:contain;
-  background-position: right center;
+  background-position: right bottom;
+  background-attachment: fixed;
   background-repeat: no-repeat;
   opacity: 0.1;
   position:absolute;
@@ -40,9 +41,6 @@ position:relative;
         text-align:center;
 }
 
-.myw-30{
-  width:30%;
-}
 .myfs-1vh{
 font-size: 2vh;
 }
