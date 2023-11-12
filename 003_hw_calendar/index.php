@@ -1,7 +1,7 @@
 <?php
 include('./calendar-files/program.php');
 // 秒數更新;需改用js實現(11/04記)
-// header("Refresh:60");
+header("Refresh:60");
     // 變數
     $row=$_SESSION['row'];
     $FC=$_SESSION['PreMDt'];
@@ -23,7 +23,6 @@ if(isset($_GET['month'])){
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <!-- external_end -->
     <link rel="icon" href="./img/logo.ico" type="image/x-icon" />
-    <!-- <link rel="stylesheet" href="./calendar-css/style.css"> -->
 </head>
 <?php
 include('./calendar-files/style.php');
@@ -31,9 +30,8 @@ include('./calendar-files/style.php');
 <body>
     <div class="container-fliud">
         <!-- 整個版面開始 -->
-
         <div class="row m-0 vh-100">
-            <div class="col-12 col-sm-6 myleft">
+            <div id="" class="col-12 col-sm-6 myleft">
              <?php
               include('./calendar-files/myleft-header.php');
               include('./calendar-files/myleft-calendar.php');
@@ -47,6 +45,19 @@ include('./calendar-files/style.php');
         </div>
     <!-- 整個版面結尾 -->
     </div>
+    <script>
+VANTA.TRUNK({
+  el: "#my-background",
+  mouseControls: true,
+  touchControls: true,
+  gyroControls: false,
+  minHeight: 200.00,
+  minWidth: 200.00,
+  scale: 1.00,
+  scaleMobile: 1.00,
+  chaos: 2.50
+})
+</script>
 </body>
 </html>
 <?php

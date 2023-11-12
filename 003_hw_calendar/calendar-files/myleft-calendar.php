@@ -1,4 +1,4 @@
-<div class='container w-75 mt-3'>
+<div class='container w-75 my-3'>
                 <div class='row'>
                     <?php  
 $num=count($_SESSION['week']);
@@ -12,7 +12,7 @@ $color=($num-1-$key)*34;
         
 
    
-            echo "<div class='col p-0 m-0'><span class='myevery' style='background-color:rgb($color,$color,$color,0.5)'>".$w."</span></div>";
+            echo "<div class='col p-0 m-0 text-dark'><span class='myevery' style='background-color:#ffcccb'>".$w."</span></div>";
 
     }
     ?>
@@ -48,16 +48,25 @@ $color=($num-1-$key)*34;
             }
             elseif($everydayM==$month){
                 if($i>3){
-                    $color=100-(6-$i)*34;
+                    $color1=255-$everydayM*15+(6-$i)*20;
+                    $color2=204-$everydayM*15+(6-$i)*15;
+                    $color3=203-$everydayM*15+(6-$i)*10;
                             }
                             else{
-                               $color=100-$i*34; 
+                                $color1=255-$everydayM*15+$i*20;
+                                $color2=204-$everydayM*15+$i*15;
+                                $color3=203-$everydayM*15+$i*10;
                             }
+                            $color4=75+$everydayM*15;
+                            $color5=75+$everydayM*15;
+                            $color6=75+$everydayM*15;
+                            $color7=($everydayM*3.5)."px";
+
                 ?>
                 <div class="col p-0 m-0"><a class="text-dark" href="calendar.php?month=<?=$month?>&year=<?=$year?>&noteD=<?=$everydayTime?>">
                     <!-- <span class='myevery mybg-c1 myday'><?=$everyday?></span> -->
                    <?php
-echo "<span class='myevery myday' style='background-color:rgb($color,$color,$color)'>$everyday</span>"
+echo "<span class='myevery myday' style='color:rgb($color4,$color5,$color6);box-shadow:inset -$color7 -$color7 $color7 rgb($color1,$color2,$color3)'>$everyday</span>"
                    ?>
                     
 
