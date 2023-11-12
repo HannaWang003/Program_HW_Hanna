@@ -49,13 +49,13 @@ $color=($num-1-$key)*34;
             elseif($everydayM==$month){
                 if($i>3){
                     $color1=255-$everydayM*15+(6-$i)*20;
-                    $color2=204-$everydayM*15+(6-$i)*15;
-                    $color3=203-$everydayM*15+(6-$i)*10;
+                    $color2=220-$everydayM*15+(6-$i)*10;
+                    $color3=240-$everydayM*15+(6-$i)*20;
                             }
                             else{
                                 $color1=255-$everydayM*15+$i*20;
-                                $color2=204-$everydayM*15+$i*15;
-                                $color3=203-$everydayM*15+$i*10;
+                                $color2=220-$everydayM*15+$i*10;
+                                $color3=240-$everydayM*15+$i*20;
                             }
                             $color4=75+$everydayM*15;
                             $color5=75+$everydayM*15;

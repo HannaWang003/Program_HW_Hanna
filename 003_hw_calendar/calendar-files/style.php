@@ -15,7 +15,7 @@ body::before{
   content:"";
   width:100%;
   height:100%;
-  background-image:url('./img/bg<?=$_SESSION['month']?>.png');
+  /* background-image:url('./img/bg<?=$_SESSION['month']?>.png'); */
   background-size:contain;
   background-position: center center;
   background-repeat: no-repeat;
