@@ -23,8 +23,8 @@ body::before {
     /* background-image: url('./img/walkman.gif'); */
     /* 動畫取自https://cn.phoneky.com/gif-animations/?id=s2s205275 */
     /* background-size: contain; */
+    /* background-position: right bottom; */
     background-size: cover;
-    background-position: right bottom;
     background-position: center center;
     background-attachment: fixed;
     background-repeat: no-repeat;
