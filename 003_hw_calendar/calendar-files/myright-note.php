@@ -30,7 +30,7 @@ if(isset($_COOKIE['note'])){
     foreach($_COOKIE['note'] as $key => $val){
         intval($key);
         ?>
-        <div class="toast show col-12 col-sm-3 m-1 mytext-c3 mybg-c4 border-warning">
+        <div class="toast show col-12 col-sm-3 m-1 myw-A mytext-c3 mybg-c4 border-warning">
             <div class="toast-header mybg-c4 border-0">
                 <strong class="me-auto text-warning"><?=date("Y-m-d",$key)?></strong>
                 <a class="mytext-c3"

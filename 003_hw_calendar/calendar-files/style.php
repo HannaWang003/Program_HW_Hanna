@@ -48,7 +48,9 @@ body::before {
     color: #ffffff;
     text-align: center;
 }
-
+.myw-A{
+    width:auto!important;
+}
 .myfs-1vh {
     font-size: 2vh;
 }
