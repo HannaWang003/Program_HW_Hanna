@@ -12,28 +12,15 @@ a {
 
 body {
     position: relative;
-    background-color: #001F3F;
-}
-
-body::before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    background-image: url('./img/bg<?=$_SESSION['month']?>.png');
-    /* background-image: url('./img/walkman.gif'); */
-    /* 動畫取自https://cn.phoneky.com/gif-animations/?id=s2s205275 */
-    /* background-size: contain; */
-    /* background-position: right bottom; */
+    /* background-color: #001F3F; */
+    background-color:#3c3744;
+    /* background-image: url('./img/bg<?=$_SESSION['month']?>.png'); */
+    background-image:url('./img/bg.png');
     background-size: cover;
-    background-position: center center;
+    background-position: left center;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    opacity: 0.5;
-    position: absolute;
-    top: 0;
-    left: 0;
 }
-
 .myright {
     position: relative;
     padding: 2vw;
@@ -194,7 +181,7 @@ body::before {
 
 .containerNote {
     position: relative;
-    width: 80%;
+    width: 100%;
     border-radius: 30px;
     padding: 4vh;
     border: 1px solid rgb(44, 67, 111);
