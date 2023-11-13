@@ -175,9 +175,6 @@ body {
     background-color: rgb(0, 0, 0, 0.5);
 }
 
-.mybtn-bgc1 {
-    background-color: rgb(44, 67, 111);
-}
 
 .containerNote {
     position: relative;
