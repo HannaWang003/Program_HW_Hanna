@@ -3,10 +3,10 @@
     <div class="row">
         <?php
                         if($_COOKIE['noteD']!=strtotime('today')){
-                            echo "<div class='myfs-vh4 col-12 text-end text-sm-start col-sm-8 text-light'>memo on&nbsp;‣&nbsp;".date("Y-m-d",$_COOKIE['noteD'])."</div>";
+                            echo "<div class='myfs-vh4 col-12 text-end text-sm-start col-sm-8 text-light'>memo on&nbsp;‣&nbsp;".date("Y ‣ m•d",$_COOKIE['noteD'])."</div>";
                         }
                         else{
-                            echo "<div class='myfs-vh4 col-12 text-end text-sm-start col-sm-8 text-light'>Today&nbsp;‣&nbsp;".date('Y-m-d')."</div>";
+                            echo "<div class='myfs-vh4 col-12 text-end text-sm-start col-sm-8 text-light'>Today&nbsp;‣&nbsp;".date('Y ‣ m•d')."</div>";
                         }
             ?>
         <div class="col-12 col-sm-4 myfs-vh3 d-flex align-items-center justify-content-end text-light">
@@ -53,7 +53,7 @@ if($limitD<0){
     }
     ?>
             <div class="toast-header mybg-c4 border-0">
-                <strong class="me-auto text-light"><?=date("Y-m-d",$key)?></strong>
+                <strong class="me-auto text-light"><?=date("Y ‣ m • d",$key)?></strong>
                 <a class="mytext-c3"
                     href="calendar.php?month=<?=$month?>&year=<?=$year?>&Ddate=<?=$key?>&Dnote=<?=$val?>"><i
                         class="fa-solid fa-trash-can fa-bounce fa-xl" style="color:white"></i></a>
@@ -63,12 +63,12 @@ if($limitD<0){
                 <?php
 if($limitD<0){
   ?>
-                <p class="bg-secondary text-light p-2"><i class="fa-regular fa-calendar-xmark fa-xl"></i>&nbsp;overdue X <?=$limitD?>dyas</p>
+                <p class="bg-secondary text-light p-2"><i class="fa-regular fa-calendar-xmark fa-xl"></i>&nbsp;overdue X ‣ <?=$limitD?>dyas</p>
                 <?php
   } 
   elseif($limitD==0){
     ?>
-    <p class="bg-danger text-light p-2"><i class="fa-regular fa-calendar-check fa-xl"></i>&nbsp;Done? ‣ <?=$limitD?>dyas</p>
+    <p class="bg-danger text-light p-2"><i class="fa-regular fa-calendar-check fa-xl"></i>&nbsp;Done&nbsp;&nbsp;? ‣‣ <?=$limitD?>dyas</p>
     <?php
   }
   elseif($limitD==1){
