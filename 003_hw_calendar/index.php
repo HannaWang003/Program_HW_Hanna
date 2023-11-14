@@ -1,7 +1,7 @@
 <?php
 include('./calendar-files/program.php');
 // 秒數更新;需改用js實現(11/04記)
-// header("Refresh:60");
+header("Refresh:60");
     // 變數
     $row=$_SESSION['row'];
     $FC=$_SESSION['PreMDt'];
