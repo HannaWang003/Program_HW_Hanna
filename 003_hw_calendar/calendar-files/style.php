@@ -30,7 +30,7 @@ body {
     height: 100%;
     background-color: rgb(48, 65, 81);
     background-position: fixed;
-    opacity: 0.3;
+    opacity: 0.5;
     filter: blur(5px) invert(<?=$bodyColor?>);
     position: absolute;
     top: 0;
