@@ -13,14 +13,30 @@ a {
 body {
     position: relative;
     /* background-color: #001F3F; */
-    background-color:#3c3744;
+    background-color: #3c3744;
     /* background-image: url('./img/bg<?=$_SESSION['month']?>.png'); */
-    background-image:url('./img/bg.png');
+    background-image: url('./img/bg.png');
     background-size: cover;
     background-position: left center;
     background-attachment: fixed;
     background-repeat: no-repeat;
 }
+
+<?php $bodyColor=($_SESSION['month']*8)."%";
+
+?>body::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: rgb(48, 65, 81);
+    background-position: fixed;
+    opacity: 0.3;
+    filter: blur(5px) invert(<?=$bodyColor?>);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 .myright {
     position: relative;
     padding: 2vw;
@@ -35,9 +51,11 @@ body {
     color: #ffffff;
     text-align: center;
 }
-.myw-A{
-    width:auto!important;
+
+.myw-A {
+    width: auto !important;
 }
+
 .myfs-1vh {
     font-size: 2vh;
 }
