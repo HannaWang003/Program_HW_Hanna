@@ -1,5 +1,29 @@
 <?php
 include('./calendar-files/program.php');
+
+if(isset($_GET['your_choice']) && ($_SESSION['win'] < ceil($_SESSION['n']/2))){
+  $choice=[0,'<i class="fa-regular fa-hand-scissors fa-2xl"></i>','<i class="fa-regular fa-hand-back-fist fa-2xl"></i>','<i class="fa-regular fa-hand fa-2xl"></i>'];
+    $computer_choice=rand(1,3);
+if($_GET['your_choice']==$computer_choice){
+    $_SESSION['your_choice']=$choice[$_GET['your_choice']];
+    $_SESSION['computer']=$choice[$computer_choice];
+    $_SESSION['result']="平手";
+}
+elseif(($_GET['your_choice']==1 && $computer_choice==3) || ($_GET['your_choice']==2 && $computer_choice==1) || ($_GET['your_choice']==3 && $computer_choice==2)){
+    $_SESSION['win']++;
+    $_SESSION['your_choice']=$choice[$_GET['your_choice']];
+    $_SESSION['computer']=$choice[$computer_choice];
+    $_SESSION['result']="猜贏";
+}
+else{
+    $_SESSION['your_choice']=$choice[$_GET['your_choice']];
+    $_SESSION['computer']=$choice[$computer_choice];
+    $_SESSION['result']="猜輸";
+}
+header("location:index.php");
+}
+else{
+
 unset($_SESSION['row']);
 unset($_SESSION['PreMDt']);
 unset($_SESSION['month']);
@@ -106,4 +130,5 @@ break;
 }
 
 header("location:index.php?month=$month");
+}
 ?>
