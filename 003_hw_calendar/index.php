@@ -36,11 +36,9 @@ if($_SESSION['win']<3){
 ?>
 <style>
     body{
-        background-image:url(./img/bg01.jpg);
-        background-position:top left;
-        background-size:contain;
+        background-position:center right;
         background-repeat: no-repeat;
-        background-color:red;
+        background-image:url(./img/bg01.jpg);
     }
 
     .myfs-250{
@@ -50,9 +48,9 @@ if($_SESSION['win']<3){
 <body>
 <div class="container vh-100">
     <div class="row h-50 mt-5">
-    <button type="button" class="h-50 col btn border-light border-1"><a class="myfs-250 text-info" href="./calendar.php?your_choice=1"><i class="fa-regular fa-hand-scissors fa-2xl"></i></a></button>
-    <button type="button" class="h-50 col btn mybtn mx-5"><a class="myfs-250 text-info" href="./calendar.php?your_choice=2"><i class="fa-regular fa-hand-back-fist fa-2xl"></i></a></button>
-    <button type="button" class="h-50 col btn mybtn"><a class="myfs-250 text-info" href="./calendar.php?your_choice=3"><i class="fa-regular fa-hand fa-2xl"></i></a></button>
+    <button type="button" class="h-50 col btn border-light border-1"><a class="myfs-250 text-light" href="./calendar.php?your_choice=1"><i class="fa-regular fa-hand-scissors fa-2xl"></i></a></button>
+    <button type="button" class="h-50 col btn mybtn mx-5 border-light border-1"><a class="myfs-250 text-light" href="./calendar.php?your_choice=2"><i class="fa-regular fa-hand-back-fist fa-2xl"></i></a></button>
+    <button type="button" class="h-50 col btn mybtn border-light border-1"><a class="myfs-250 text-light" href="./calendar.php?your_choice=3"><i class="fa-regular fa-hand fa-2xl"></i></a></button>
     </div>
     <div class="row h-50 text-center">
 <h2 class="col-4">你出<?=$_SESSION['your_choice'];?></h1>
