@@ -35,30 +35,35 @@ if(!isset($_SESSION['win'])){
 if($_SESSION['win']<3){
 ?>
 <style>
-    body{
-        background-position:center right;
-        background-repeat: no-repeat;
-        background-image:url(./img/bg01.jpg);
-    }
+body {
+    background-color: #FB363C;
+    background-position: center right;
+    background-repeat: no-repeat;
+    background-image: url(./img/bg01.jpg);
+}
 
-    .myfs-250{
-        font-size:250%;
-    }
+.myfs-250 {
+    font-size: 250%;
+}
 </style>
+
 <body>
-<div class="container vh-100">
-    <div class="row h-50 mt-5">
-    <button type="button" class="h-50 col btn border-light border-1"><a class="myfs-250 text-light" href="./calendar.php?your_choice=1"><i class="fa-regular fa-hand-scissors fa-2xl"></i></a></button>
-    <button type="button" class="h-50 col btn mybtn mx-5 border-light border-1"><a class="myfs-250 text-light" href="./calendar.php?your_choice=2"><i class="fa-regular fa-hand-back-fist fa-2xl"></i></a></button>
-    <button type="button" class="h-50 col btn mybtn border-light border-1"><a class="myfs-250 text-light" href="./calendar.php?your_choice=3"><i class="fa-regular fa-hand fa-2xl"></i></a></button>
-    </div>
-    <div class="row h-50 text-center">
-<h2 class="col-4">你出<?=$_SESSION['your_choice'];?></h1>
-<h1 class="col-4">VS</h1>
-<h2 class="col-4">對手出<?=$_SESSION['computer'];?></h1>
-<h1><?=$_SESSION['result'];?></h1>
-<h1>贏第<?=$_SESSION['win']?>/<?=$_SESSION['n']?>次</h1>
-<?php
+    <div class="container vh-100">
+        <div class="row h-50 mt-5">
+            <button type="button" class="h-50 col btn border-light border-1"><a class="myfs-250 text-light"
+                    href="./calendar.php?your_choice=1"><i class="fa-regular fa-hand-scissors fa-2xl"></i></a></button>
+            <button type="button" class="h-50 col btn mybtn mx-5 border-light border-1"><a class="myfs-250 text-light"
+                    href="./calendar.php?your_choice=2"><i class="fa-regular fa-hand-back-fist fa-2xl"></i></a></button>
+            <button type="button" class="h-50 col btn mybtn border-light border-1"><a class="myfs-250 text-light"
+                    href="./calendar.php?your_choice=3"><i class="fa-regular fa-hand fa-2xl"></i></a></button>
+        </div>
+        <div class="row h-50 text-center">
+            <h2 class="col-4 text-light">你出<?=$_SESSION['your_choice'];?></h1>
+                <h1 class="col-4">VS</h1>
+                <h2 class="col-4 text-light">對手出<?=$_SESSION['computer'];?></h1>
+                    <h1 class="text-light"><?=$_SESSION['result'];?></h1>
+                    <h1 class="text-light">贏第<?=$_SESSION['win']?>/<?=$_SESSION['n']?>次</h1>
+                    <?php
 }
 else{
     // 變數
@@ -71,25 +76,25 @@ if(isset($_GET['month'])){
 include('./calendar-files/style.php');
 ?>
 
-<body>
-    <div class="container-fliud">
-        <!-- 整個版面開始 -->
-        <div class="row m-0 vh-100">
-            <div id="" class="col-12 col-sm-6 myleft">
-                <?php
+                    <body>
+                        <div class="container-fliud">
+                            <!-- 整個版面開始 -->
+                            <div class="row m-0 vh-100">
+                                <div id="" class="col-12 col-sm-6 myleft">
+                                    <?php
               include('./calendar-files/myleft-header.php');
               include('./calendar-files/myleft-calendar.php');
              ?>
-            </div>
-            <div class="col-12 col-sm-6 myright">
-                <?php
+                                </div>
+                                <div class="col-12 col-sm-6 myright">
+                                    <?php
               include('./calendar-files/myright-note.php');
              ?>
-            </div>
-        </div>
-        <!-- 整個版面結尾 -->
-    </div>
-</body>
+                                </div>
+                            </div>
+                            <!-- 整個版面結尾 -->
+                        </div>
+                    </body>
 
 </html>
 <?php
