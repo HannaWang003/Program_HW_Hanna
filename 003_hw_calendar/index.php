@@ -32,7 +32,7 @@ if(!isset($_SESSION['win'])){
   $_SESSION['win']=0; 
   $_SESSION['n']=5; 
 }
-if($_SESSION['win']<3){
+if($_SESSION['win']<$_SESSION['n']){
 ?>
 <style>
 body {
@@ -58,11 +58,11 @@ body {
                     href="./calendar.php?your_choice=3"><i class="fa-regular fa-hand fa-2xl"></i></a></button>
         </div>
         <div class="row h-50 text-center">
-            <h2 class="col-4 text-light">你出<?=$_SESSION['your_choice'];?></h1>
+            <h2 class="col-4 text-light">You play<?=$_SESSION['your_choice'];?></h1>
                 <h1 class="col-4">VS</h1>
-                <h2 class="col-4 text-light">對手出<?=$_SESSION['computer'];?></h1>
+                <h2 class="col-4 text-light">Opponent plays<?=$_SESSION['computer'];?></h1>
                     <h1 class="text-light"><?=$_SESSION['result'];?></h1>
-                    <h1 class="text-light">贏第<?=$_SESSION['win']?>/<?=$_SESSION['n']?>次</h1>
+                    <h1 class="text-light">won&nbsp;<?=$_SESSION['win']?>/<?=$_SESSION['n']?>&nbsp;times</h1>
                     <?php
 }
 else{

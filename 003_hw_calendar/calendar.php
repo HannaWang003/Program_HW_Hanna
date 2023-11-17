@@ -1,24 +1,24 @@
 <?php
 include('./calendar-files/program.php');
 
-if(isset($_GET['your_choice']) && ($_SESSION['win'] < ceil($_SESSION['n']/2))){
+if(isset($_GET['your_choice']) && ($_SESSION['win'] < $_SESSION['n'])){
   $choice=[0,'<i class="fa-regular fa-hand-scissors fa-2xl"></i>','<i class="fa-regular fa-hand-back-fist fa-2xl"></i>','<i class="fa-regular fa-hand fa-2xl"></i>'];
     $computer_choice=rand(1,3);
 if($_GET['your_choice']==$computer_choice){
     $_SESSION['your_choice']=$choice[$_GET['your_choice']];
     $_SESSION['computer']=$choice[$computer_choice];
-    $_SESSION['result']="平手";
+    $_SESSION['result']="We're even!";
 }
 elseif(($_GET['your_choice']==1 && $computer_choice==3) || ($_GET['your_choice']==2 && $computer_choice==1) || ($_GET['your_choice']==3 && $computer_choice==2)){
     $_SESSION['win']++;
     $_SESSION['your_choice']=$choice[$_GET['your_choice']];
     $_SESSION['computer']=$choice[$computer_choice];
-    $_SESSION['result']="猜贏";
+    $_SESSION['result']="You crushed it!";
 }
 else{
     $_SESSION['your_choice']=$choice[$_GET['your_choice']];
     $_SESSION['computer']=$choice[$computer_choice];
-    $_SESSION['result']="猜輸";
+    $_SESSION['result']="No luck this time!";
 }
 header("location:index.php");
 }
