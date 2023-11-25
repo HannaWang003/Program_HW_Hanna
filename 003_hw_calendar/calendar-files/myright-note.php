@@ -1,5 +1,5 @@
 <!-- section_date_note_submit -->
-<div class="containerNote border-light">
+<div class="containerNote">
     <div class="row">
         <?php
                         if($_COOKIE['noteD']!=strtotime('today')){
@@ -15,88 +15,61 @@
     <form action="calendar.php?noteD=<?=$_COOKIE['noteD']?>&month=<?=$month?>&year=<?=$year?>" method="post">
         <div class="input-group mb-3">
             <input type="text" class="form-control" name="note" id="note" placeholder="One task at a time..">
-            <button class="btn border-dark mybg-c5" type="submit" data-bs-toggle="popover" data-bs-trigger="hover"
-                title="NOTED"><i class="fa-solid fa-clipboard fa-xl" style="color:rgb(255,204,203)"></i></button>
-            <button class="btn border-dark mybg-c5" type="reset" data-bs-toggle="popover" title="CANCLE"><i
-                    class="fa-solid fa-eraser fa-xl" style="color:rgb(255,204,203)"></i></button>
+            <button class="btn border-dark my-btn" type="submit" data-bs-toggle="popover" data-bs-trigger="hover"
+                title="NOTED"><i class="fa-solid fa-clipboard fa-xl"></i></button>
+            <button class="btn border-dark my-btn" type="reset" data-bs-toggle="popover" title="CANCLE"><i
+                    class="fa-solid fa-eraser fa-xl"></i></button>
         </div>
     </form>
 </div>
 <!-- section_note -->
 <div class="container">
     <div class="row m-auto">
-        <?php
+  <?php
 if(isset($_COOKIE['note'])){
+    ?>
+<ol class="list-group list-group-numbered">
+    <?php
     foreach($_COOKIE['note'] as $key => $val){
         intval($key);
 $limitDt=$key-strtotime('today');
 $limitD=ceil($limitDt/60/60/24);
-if($limitD<0){
-        ?>
-        <div class="toast show col-12 col-sm-3 m-1 myw-A mytext-c3 mybg-c4 border-secondary">
-            <?php
-    }
-    elseif($limitD==0){
-        ?>
-            <div class="toast show col-12 col-sm-3 m-1 myw-A mytext-c3 mybg-c4 border-danger">
-                <?php
-    }
-    elseif($limitD==1){
-        ?>
-                <div class="toast show col-12 col-sm-3 m-1 myw-A mytext-c3 mybg-c4 border-warning">
-                    <?php
-    }
-    else{
-        ?>
-                    <div class="toast show col-12 col-sm-3 m-1 myw-A mytext-c3 mybg-c4 border-primary">
-                        <?php
-    }
-    ?>
-                        <div class="toast-header mybg-c4 border-0">
-                            <strong class="me-auto text-light"><?=date("Y ‣ m • d",$key)?></strong>
-                            <a class="mytext-c3"
-                                href="calendar.php?month=<?=$month?>&year=<?=$year?>&Ddate=<?=$key?>&Dnote=<?=$val?>"><i
-                                    class="fa-solid fa-trash-can fa-bounce fa-xl" style="color:white"></i></a>
-                        </div>
-                        <div class="toast-body p-1 text-light">
-                            <p><?=$val?></p>
-                            <?php
-if($limitD<0){
-  ?>
-                            <p class="bg-secondary text-light p-2"><i
-                                    class="fa-regular fa-calendar-xmark fa-xl"></i>&nbsp;overdue X ‣ <?=$limitD?>dyas
-                            </p>
-                            <?php
-  } 
-  elseif($limitD==0){
-    ?>
-                            <p class="bg-danger text-light p-2"><i
-                                    class="fa-regular fa-calendar-check fa-xl"></i>&nbsp;Done&nbsp;&nbsp;? ‣‣
-                                <?=$limitD?>dyas</p>
-                            <?php
-  }
-  elseif($limitD==1){
-    ?>
-                            <p class="bg-warning text-dark p-2"><i
-                                    class="fa-regular fa-calendar-minus fa-xl"></i>&nbsp;Deadline ‣ <?=$limitD?>dyas</p>
-                            <?php
+?>
+  <li class="list-group-item d-flex justify-content-between align-items-start mycard mt-2">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold">
+      <?=date("Y ‣ m • d",$key)?>
+      </div>
+      <span class="text-secondar"><?=$val?></span>
+    </div>
+    <span class="badge bg-primary rounded-pill mycardDel">
+    <?php
+if($limitDt<0){
+?>
+  &nbsp;overdue ‣ <?=str_replace("-","",$limitD)?> ago
+  <a href="calendar.php?month=<?=$month?>&year=<?=$year?>&Ddate=<?=$key?>&Dnote=<?=$val?>"><i class="fa-solid fa-xmark fa-2xl"></i></a>
+
+<?php
 }
 else{
-  ?>
-                            <p class="bg-primary text-dark p-2"><i
-                                    class="fa-regular fa-calendar-plus fa-xl"></i>&nbsp;time limit ‣ <?=$limitD?>dyas
-                            </p>
-                            <?php
+?>
+&nbsp;overdue ‣ <?=$limitD?> day(s)
+<a href="calendar.php?month=<?=$month?>&year=<?=$year?>&Ddate=<?=$key?>&Dnote=<?=$val?>"><i class="fa-solid fa-xmark fa-2xl"></i></a>
+<?php
 }
 ?>
-                        </div>
-                    </div>
-                    <?php
-    }
+    </span>
+  </li>
+  <?php
 }
 ?>
-                </div>
-            </div>
+  <ol>
+<?php
+}
+?>
+
+</div> 
+</div>
 
 
 

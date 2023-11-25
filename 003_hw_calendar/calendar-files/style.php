@@ -1,6 +1,5 @@
 <style>
 * {
-    box-sizing: border-box;
     margin: 0;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     text-decoration: none;
@@ -11,31 +10,9 @@ a {
 }
 
 body {
-    position: relative;
-    /* background-color: #001F3F; */
-    background-color: #3c3744;
-    /* background-image: url('./img/bg<?=$_SESSION['month']?>.png'); */
-    background-image: url('./img/bg.png');
-    background-size: cover;
-    background-position: left center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+
 }
 
-<?php $bodyColor=($_SESSION['month']*8)."%";
-
-?>body::before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    background-color: rgb(48, 65, 81);
-    background-position: fixed;
-    opacity: 0.5;
-    filter: blur(5px) invert(<?=$bodyColor?>);
-    position: absolute;
-    top: 0;
-    left: 0;
-}
 
 .myright {
     position: relative;
@@ -44,14 +21,25 @@ body {
     flex-direction: column;
     align-items: center;
     color: #333333;
+    background-color:#f6efef;
+}
+.mycard{
+    background-color:#f0e2e1;
+}
+.mycardDel{
+    background-color:#4fc4cf !important;
 }
 
 .myleft {
     position: relative;
-    color: #ffffff;
+    color: rgb(255,204,203);
     text-align: center;
+    background-color:#F0E2E1
 }
-
+.mycalendar{
+    border-radius: 50px;
+    margin-bottom:30px;
+}
 .myw-A {
     width: auto !important;
 }
@@ -80,45 +68,15 @@ body {
     font-size: 3vh;
 }
 
-.myleft input:nth-child(1) {
-    background-color: rgba(196, 196, 196, 0.5);
-    border: 1px solid white;
-}
-
-.myleft select {
-    width: 40%;
-    height: 4vh;
-    font-size: 1vw;
-    background-color: rgba(196, 196, 196, 0.5);
-    border: 1px solid white;
-}
-
 .myLheader-col-2 button {
     font-size: 2vh;
 }
-
-.myLheader-col-4 input[type='text'] {
-    font-size: 2vh;
-    height: 4vh;
+.my-select select{
+    border:0;
+    box-sizing:border-box;
 }
 
-.myLheader-col-4 select {
-    font-size: 2vh;
-}
 
-.myLheader-col-4 button {
-    width: 10vh;
-    font-size: 2vh;
-    border: 0;
-}
-
-.myLheader-col-4 button i {
-    color: #888;
-}
-
-.myLheader-col-4 button i:hover {
-    color: #fff;
-}
 
 .myevery {
     font-size: 1vw;
@@ -131,7 +89,6 @@ body {
 }
 
 .myday:hover {
-    background-color: rgb(255, 204, 203);
     filter: drop-shadow(2px 2px 0px #FFCCCB);
     color: #333;
     transition-duration: 0.3s;
@@ -150,7 +107,7 @@ body {
 }
 
 .mytext-c1 {
-    color: #ffcccb;
+    color: #fec7d7;
 }
 
 .mytext-c2 {
@@ -185,8 +142,8 @@ body {
     border-radius: 10px;
 }
 
-.mybg-c5 {
-    background-color: rgb(44, 67, 111);
+.my-btn {
+    background-color: #4fc4cf;
 }
 
 .mybg-c4:hover {
@@ -197,11 +154,11 @@ body {
 .containerNote {
     position: relative;
     width: 100%;
-    border-radius: 30px;
     padding: 4vh;
-    border: 1px solid rgb(44, 67, 111);
-    ;
+    background:rgb(24,24,24);
+    margin:10px auto;
 }
+
 
 /* 加入記事end */
 </style>

@@ -12,7 +12,7 @@ $color=($num-1-$key)*34;
         
 
    
-            echo "<div class='col p-0 m-0 text-dark'><span class='myevery' style='background-color:#ffcccb'>".$w."</span></div>";
+            echo "<div class='col p-0 m-0 text-dark'><span class='myevery' style='background-color:#4FC4CF;color:rgb(240,226,225)'>".$w."</span></div>";
 
     }
     ?>
@@ -20,7 +20,7 @@ $color=($num-1-$key)*34;
 
                 <!-- 分隔線 -->
             </div>
-            <div class="container w-75">
+            <div class="container w-75 mycalendar">
                 <?php
     for($j=0;$j < $row; $j++){
         echo "<div class='row'>";
@@ -48,14 +48,14 @@ $color=($num-1-$key)*34;
             }
             elseif($everydayM==$month){
                 if($i>3){
-                    $color1=255-$everydayM*15+(6-$i)*20;
-                    $color2=220-$everydayM*15+(6-$i)*10;
-                    $color3=240-$everydayM*15+(6-$i)*20;
+                    $color1=79-$everydayM*15+(6-$i)*20;
+                    $color2=196-$everydayM*15+(6-$i)*10;
+                    $color3=207-$everydayM*15+(6-$i)*20;
                             }
                             else{
-                                $color1=255-$everydayM*15+$i*20;
-                                $color2=220-$everydayM*15+$i*10;
-                                $color3=240-$everydayM*15+$i*20;
+                                $color1=79-$everydayM*15+$i*20;
+                                $color2=196-$everydayM*15+$i*10;
+                                $color3=207-$everydayM*15+$i*20;
                             }
                             $color4=75+$everydayM*15;
                             $color5=75+$everydayM*15;
