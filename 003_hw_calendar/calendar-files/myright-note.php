@@ -29,7 +29,7 @@
   <?php
 if(isset($_COOKIE['note'])){
     ?>
-<ul class="list-group list-group-numbered col-10" style="list-style-image:url(../img/bell-regular.svg)">
+<ul class="list-group list-group-numbered col-9 offset-3 mb-5" style="list-style-image:url(../img/bell-regular.svg)">
     <?php
     foreach($_COOKIE['note'] as $key => $val){
         intval($key);

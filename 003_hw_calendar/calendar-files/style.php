@@ -24,6 +24,7 @@ body {
     align-items: center;
     color: #333333;
     background-color:#f6efef;
+    background-image:linear-gradient(90deg,#f0e2e1 25%, #F7EBEC 25%, transparent 30%);
 
 }
 .mynote-header {
@@ -34,6 +35,7 @@ body {
 .mycard{
     background-color:#f0e2e1;
     font-family: 'Cabin Sketch', sans-serif;
+    box-shadow: 0 0 2px #D9D2D2;
 }
 .mycard-content{
     
@@ -66,6 +68,11 @@ body {
     background-size:50vh;
     background-repeat: no-repeat;
     background-position:left bottom;
+    /* box-shadow:inset -30px 0px 20px #D9D2D2; */
+}
+.myselect-btn{
+    font-family: 'Cabin Sketch', sans-serif;
+    font-size:2rem;
 }
 .myLeft-month{
     font-weight:bolder;

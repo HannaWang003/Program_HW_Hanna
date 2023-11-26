@@ -6,7 +6,7 @@
         <div class="col-6 offset-6 col-sm-4 offset-sm-2 text-end d-flex flex-nowrap myLheader-col-2">
             <a class="col-4 ms-1 text-decoration-none"
                 href="calendar.php?prev=<?=$month?>&year=<?=$year?>"><button type="button" class="btn px-3"><i class="fa-solid fa-clock-rotate-left fa-lg"></i></button></a>
-            <a class="col-4 ms-1 text-decoration-none" href="calendar.php"><button type="button" class="btn px-3"><i class="fa-solid fa-pause fa-sm"></i></button></a>
+            <a class="col-4 ms-1 text-decoration-none" href="calendar.php"><button type="button" class="btn px-3"><i class="fa-solid fa-pause fa-xl"></i></button></a>
             <a class="col-4 ms-1 text-decoration-none"
                 href="calendar.php?next=<?=$month?>&year=<?=$year?>"><button type="button" class="btn px-3"><i class="fa-solid fa-clock-rotate-left fa-flip-horizontal fa-lg"></i></button></a>
         </div>
@@ -30,8 +30,8 @@
                 </select>
   </span>
     <input type="text" class="form-control" type="text" name="year" id="year"
-                    onkeyup="value=value.replace(/^(0+)|[^\d]+/g,'')" style="flex:1 !important" placeholder="year">
-                    <button type="button submit" class="btn"><i class="fa-solid fa-calendar-check fa-2xl"></i></button>
+                    onkeyup="value=value.replace(/^(0+)|[^\d]+/g,'')" style="flex:1.5 !important" placeholder="year">
+                    <button type="button submit" class="btn myselect-btn"> >> </button>
 </div>
                 <!-- <input class="submitB" type="submit" value="⁞⁞⁞"> -->
             </form>
