@@ -9,7 +9,7 @@ header("Refresh:60");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>☼CALENDAR</title>
+    <title>CALENDAR</title>
     <!-- external -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
@@ -19,12 +19,14 @@ header("Refresh:60");
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
     </script>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@700&family=Mansalva&family=Sniglet&display=swap" rel="stylesheet">   <!-- external_end -->
+
     <!-- external_end -->
-    <link rel="icon" href="./img/barcode-solid.svg" type="image/x-icon" />
+    <link rel="icon" href="./img/logo-1.ico" type="image/x-icon" />
 </head>
 <?php
 if(!isset($_SESSION['result'])){
-    $_SESSION['result']="傲嬌萬年曆系統";
+    $_SESSION['result']="Hanna's calendar stystem";
     $_SESSION['your_choice']="??";
     $_SESSION['computer']="??";
 }
@@ -38,46 +40,47 @@ if($_SESSION['win']<$_SESSION['n']){
     *{
     font-family: 'Cabin Sketch', sans-serif;
     font-size:1.5rem;
+    text-shadow: 0px 0px 5px #333;
 
     }
 body {
     position:relative;
     background-color:#F7EBEC;
-    background-position: right bottom;
-    background-repeat: no-repeat;
+    background-size:150px;
     color:#333;
-}
+    background-image:url(./img/bg-index.png);
+    background-position: right bottom;
+    background-repeat:repeat-x;
+    background-attachment: fixed;
 
-.myfs-250 {
-    font-size: 250%;
 }
 .mybtn{
     background-color: #F0E2E1;
 }
 @keyframes jumpRight {
   0% {
-    transform: translate(0,0);
+    transform: translate(0vw,0vh);
   }
   12%{
-    transform: translate(12vw, 10vh);
+    transform: translate(12vw, 5vh);
   }
   25% {
     transform: translate(25vw, 0vh);
   }
   37% {
-    transform: translate(37vw, 10vh);
+    transform: translate(37vw, 5vh);
   }
   50% {
-    transform: translate(50vw, 0vh);
+    transform: translate(50vw, 0px);
   }
   62% {
-    transform: translate(62vw, 10vh);
+    transform: translate(62vw, 5vh);
   }
   75% {
-    transform: translate(75vw, 0vh);
+    transform: translate(75vw, 0px);
   }
   87% {
-    transform: translate(87vw, 10vh);
+    transform: translate(87vw, 5vh);
   }
   100% {
     transform: translate(100vw, 0px);
@@ -85,10 +88,10 @@ body {
 }
 
 .fog{
-    width:100vw;
-    position:absolute;
-  left:0;
-  bottom:80px;
+    height:2.5vh;
+  position:absolute;
+bottom:0;
+left:0;
   
 }
 .fog img{
@@ -98,24 +101,34 @@ body {
 </style>
 
 <body>
-    <div class="container vh-100">
-        <div class="row h-25 mt-2">
-            <button type="button" class="h-100 col btn mybtn"><a class="myfs-250"
-                    href="./calendar.php?your_choice=1"><i class="fa-regular fa-hand-scissors fa-lg"></i></a></button>
-            <button type="button" class="h-100 col btn mybtn mx-5"><a class="myfs-250"
-                    href="./calendar.php?your_choice=2"><i class="fa-regular fa-hand-back-fist fa-lg"></i></a></button>
-            <button type="button" class="h-100 col btn mybtn"><a class="myfs-250"
-                    href="./calendar.php?your_choice=3"><i class="fa-regular fa-hand fa-lg"></i></a></button>
+    <div class="container">
+        <div class="row mt-2">
+            <button type="button" class="col-12 col-sm m-1 py-2 btn mybtn"><a class="text-dark"
+                    href="./calendar.php?your_choice=1"><i class="fa-regular fa-hand-scissors fa-xl"></i></a></button>
+            <button type="button" class="col-12 col-sm m-1 py-2 btn mybtn"><a class="text-dark"
+                    href="./calendar.php?your_choice=2"><i class="fa-regular fa-hand-back-fist fa-xl"></i></a></button>
+            <button type="button" class="col-12 col-sm m-1 py-2 btn mybtn"><a class="text-dark"
+                    href="./calendar.php?your_choice=3"><i class="fa-regular fa-hand fa-xl"></i></a></button>
         </div>
-        <div class="row h-50 text-center">
-            <h2 class="col-4 text-light">You play<?=$_SESSION['your_choice'];?></h1>
+        <div class="row text-center my-1 my-sm-5">
+            <div class="col-4 text-light">
+               <h2>You play</h1> 
+               <?=$_SESSION['your_choice'];?>
+            </div>            
                 <h1 class="col-4">VS</h1>
-                <h2 class="col-4 text-light">Opponent plays<?=$_SESSION['computer'];?></h1>
-                    <h1 class=""><?=$_SESSION['result'];?></h1>
-                    <h1 class="">won&nbsp;<?=$_SESSION['win']?>/<?=$_SESSION['n']?>&nbsp;times</h1>
+            <div class="col-4 text-light">
+<h2>Opponent plays</h1>
+<?=$_SESSION['computer'];?>
+            </div>
+            <div class="row m-auto flex-column my-sm-3 my-1">
+                <h1 class=""><?=$_SESSION['result'];?></h1>
+                <h1 class="">won&nbsp;<?=$_SESSION['win']?>/<?=$_SESSION['n']?>&nbsp;times</h1>
+            </div>
+                
+                    
 </div>
 <div class="fog">
-<img class="element-to-animate" src="./img/bg-jump.png" alt="">
+<img class="element-to-animate" src="./img/bg-jump-1.png" alt="">
 </div>
 </div>            
                     <?php
