@@ -12,7 +12,7 @@ $color=($num-1-$key)*34;
         
 
    
-            echo "<div class='col p-0 m-0 text-dark'><span class='myevery' style='background-color:#4FC4CF;color:rgb(240,226,225)'>".$w."</span></div>";
+            echo "<div class='col p-0 m-0 text-dark'><span class='myevery mycalendar-week'>".$w."</span></div>";
 
     }
     ?>

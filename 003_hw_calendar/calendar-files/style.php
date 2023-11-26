@@ -2,6 +2,7 @@
 * {
     margin: 0;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-family: 'Mansalva', sans-serif;
     text-decoration: none;
 }
 
@@ -10,7 +11,8 @@ a {
 }
 
 body {
-
+    
+    
 }
 
 
@@ -22,23 +24,73 @@ body {
     align-items: center;
     color: #333333;
     background-color:#f6efef;
+
 }
+.mynote-header {
+    font-family: 'Cabin Sketch', sans-serif;
+    font-size:1.5rem;
+}
+
 .mycard{
     background-color:#f0e2e1;
+    font-family: 'Cabin Sketch', sans-serif;
+}
+.mycard-content{
+    
+}
+.mycard-date{
+    font-family:'Cabin Sketch', sans-serif;
 }
 .mycardDel{
     background-color:#4fc4cf !important;
 }
+.myright-footer{
+    width:100%;
+    height:50%;
+    position:absolute;
+    right:0;
+    bottom:0;
+    background-image:url(./img/bg-right.png);
+    background-repeat: no-repeat;
+    background-size:20%;
+    background-position:right bottom;
+    background-attachment: fixed;
+}
 
 .myleft {
     position: relative;
-    color: rgb(255,204,203);
+    color: #333;
     text-align: center;
-    background-color:#F0E2E1
+    background-color:#F0E2E1;
+    background-image:url(./img/bg-left-1.png);
+    background-size:50vh;
+    background-repeat: no-repeat;
+    background-position:left bottom;
+}
+.myLeft-month{
+    font-weight:bolder;
+    font-family: 'Cabin Sketch', sans-serif;
+    font-size:4rem;
+}
+.myLeft-year{
+    font-weight:bolder;
+    font-size:1.5rem;
 }
 .mycalendar{
     border-radius: 50px;
     margin-bottom:30px;
+    
+}
+.mycalendar-week{
+    background-color:#4FC4CF;
+    font-family: 'Cabin Sketch', sans-serif;
+    font-size:1rem;
+    color:rgb(240,226,225);    
+}
+.mycalendar span{
+    font-size:1rem;
+    font-family: 'Sniglet', sans-serif;
+    
 }
 .myw-A {
     width: auto !important;
@@ -52,16 +104,9 @@ body {
     font-size: 3vh;
 }
 
-.myfs-vh4 {
-    font-size: 4vh;
-}
 
 .myfs-vh5 {
     font-size: 5vh;
-}
-
-.myfs-vh8 {
-    font-size: 8vh;
 }
 
 .myfs-vh3 {
@@ -89,8 +134,9 @@ body {
 }
 
 .myday:hover {
-    filter: drop-shadow(2px 2px 0px #FFCCCB);
-    color: #333;
+    background-color:#4fc4cf;
+    box-shadow:50px 50px 50px transparent !important;
+    color: #333 !important;
     transition-duration: 0.3s;
 }
 
@@ -101,9 +147,10 @@ body {
 }
 
 .mytoday-c1 {
-    box-shadow: inset 0 0 50px rgb(0, 31, 63);
-    background-color: white;
-    color: white;
+    border:1px solid #4fc4cf;
+    /* background-color: white; */
+    color: #4fc4cf;
+    /* text-shadow:5px 5px 2px #4fc4cf; */
 }
 
 .mytext-c1 {
@@ -146,17 +193,14 @@ body {
     background-color: #4fc4cf;
 }
 
-.mybg-c4:hover {
-    background-color: rgb(0, 0, 0, 0.5);
-}
-
 
 .containerNote {
     position: relative;
     width: 100%;
     padding: 4vh;
-    background:rgb(24,24,24);
+    background:#04315A;
     margin:10px auto;
+    color:#F0E2E1;
 }
 
 
