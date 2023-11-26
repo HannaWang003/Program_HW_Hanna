@@ -10,12 +10,6 @@ a {
     color: black;
 }
 
-body {
-    
-    
-}
-
-
 .myright {
     position: relative;
     padding: 2vw;
@@ -36,9 +30,6 @@ body {
     background-color:#f0e2e1;
     font-family: 'Cabin Sketch', sans-serif;
     box-shadow: 0 0 2px #D9D2D2;
-}
-.mycard-content{
-    
 }
 .mycard-date{
     font-family:'Cabin Sketch', sans-serif;
