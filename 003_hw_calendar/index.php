@@ -26,13 +26,13 @@ header("Refresh:60");
 </head>
 <?php
 if(!isset($_SESSION['result'])){
-    $_SESSION['result']="Hanna's calendar stystem";
+    $_SESSION['result']="Hanna's calendar system";
     $_SESSION['your_choice']="??";
     $_SESSION['computer']="??";
 }
 if(!isset($_SESSION['win'])){
   $_SESSION['win']=0; 
-  $_SESSION['n']=5; 
+  $_SESSION['n']=3; 
 }
 if($_SESSION['win']<$_SESSION['n']){
 ?>
