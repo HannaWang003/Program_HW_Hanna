@@ -55,7 +55,7 @@ a {
     color: #333;
     text-align: center;
     background-color:#F0E2E1;
-    background-image:url(./img/bg-left-1.png);
+    background-image:url(./img/bg-left.png);
     background-size:50vh;
     background-repeat: no-repeat;
     background-position:left bottom;
