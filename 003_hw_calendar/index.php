@@ -32,7 +32,7 @@ if(!isset($_SESSION['result'])){
 }
 if(!isset($_SESSION['win'])){
   $_SESSION['win']=0; 
-  $_SESSION['n']=5; 
+  $_SESSION['n']=3; 
 }
 if($_SESSION['win']<$_SESSION['n']){
 ?>
