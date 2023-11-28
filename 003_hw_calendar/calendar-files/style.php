@@ -4,8 +4,15 @@
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     font-family: 'Mansalva', sans-serif;
     text-decoration: none;
-}
 
+}
+body{
+    cursor:url(./img/bug.png) 10 5,auto;
+}
+body a{
+    cursor:url(./img/bug-a.png) 10 5,auto;
+ 
+}
 a {
     color: black;
 }
@@ -141,6 +148,8 @@ a {
 .mynotedD {
     color: white;
     background-color: rgb(195, 41, 41);
+    background-image:url(./img/forg.svg);
+    background-size:contain;
     text-shadow: 5px 5px 2px rgba(0, 0, 0, 0.66);
 }
 
