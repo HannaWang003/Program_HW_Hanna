@@ -24,54 +24,58 @@ body {
 
 @keyframes jumpRight {
     0% {
-        transform: translate(0vw, 0vh);
+        transform: translate(0vw, 0);
     }
 
     12% {
-        transform: translate(12vw, -200%);
+        transform: translate(12vw, -250%);
     }
 
     25% {
-        transform: translate(25vw, 0vh);
+        transform: translate(25vw, 0);
     }
 
     37% {
-        transform: translate(37vw, -200%);
+        transform: translate(37vw, -250%);
     }
 
     50% {
-        transform: translate(50vw, 0vh);
+        transform: translate(50vw, 0);
     }
 
     62% {
-        transform: translate(62vw, -200%);
+        transform: translate(62vw, -250%);
     }
 
     75% {
-        transform: translate(75vw, 0vh);
+        transform: translate(75vw, 0);
     }
 
     87% {
-        transform: translate(87vw, -200%);
+        transform: translate(87vw, -250%);
     }
 
     100% {
-        transform: translate(100vw, 0vh);
+        transform: translate(100vw, 0);
     }
 }
 
 .forg {
-    height: 2.5vh;
     position: absolute;
     bottom: 0;
     left: 0;
 
 }
 
-.forg img {
+.to-right {
     width: 100px;
     animation: jumpRight 5s ease-in-out infinite;
 }
+
+/* .to-left {
+    width: 100px;
+    animation: jumpRight 5s reverse ease-in-out infinite;
+} */
 </style>
 
 <body>
@@ -101,7 +105,8 @@ body {
 
 
         </div>
-        <div class="forg">
-            <img class="element-to-animate" src="./img/bg-jump-1.png" alt="">
+        <div>
+            <img class="forg to-right" src="./img/bg-jump-1.png" alt="">
+            <!-- <img class="forg to-left" src="./img/bg-jump-left.png" alt=""> -->
         </div>
     </div>
