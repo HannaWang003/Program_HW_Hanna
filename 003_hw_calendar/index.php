@@ -7,18 +7,24 @@ header("Refresh:60");
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CALENDAR</title>
-  <!-- external -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
-  </script>
-  <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@700&family=Mansalva&family=Sniglet&display=swap" rel="stylesheet"> <!-- external_end -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALENDAR</title>
+    <!-- external -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    </script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@700&family=Mansalva&family=Sniglet&display=swap"
+        rel="stylesheet"> <!-- external_end -->
 
-  <!-- external_end -->
-  <link rel="icon" href="./img/logo-1.ico" type="image/x-icon" />
+    <!-- external_end -->
+    <link rel="icon" href="./img/logo-1.ico" type="image/x-icon" />
 </head>
 <?php
 if (!isset($_SESSION['result'])) {
@@ -40,28 +46,29 @@ if ($_SESSION['win'] < $_SESSION['n']) {
   $Emonth = $_SESSION['Emonth'];
   $year = $_SESSION['year'];
   if (isset($_GET['month'])) {
+    // 載入猜拳頁面
     include('./calendar-files/style.php');
 ?>
 
-    <body>
-      <div class="container-fliud">
+<body>
+    <div class="container-fliud">
         <!-- 整個版面開始 -->
         <div class="row m-0 vh-100">
-          <div id="" class="col-12 col-sm-6 myleft">
-            <?php
+            <div id="" class="col-12 col-sm-6 myleft">
+                <?php
             include('./calendar-files/myleft-header.php');
             include('./calendar-files/myleft-calendar.php');
             ?>
-          </div>
-          <div class="col-12 col-sm-6 myright">
-            <?php
+            </div>
+            <div class="col-12 col-sm-6 myright">
+                <?php
             include('./calendar-files/myright-note.php');
             ?>
-          </div>
+            </div>
         </div>
         <!-- 整個版面結尾 -->
-      </div>
-    </body>
+    </div>
+</body>
 
 </html>
 <?php
